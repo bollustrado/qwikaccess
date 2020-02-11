@@ -17,13 +17,13 @@ public:
     ~qwikaccess();
 
 private slots:
-    void on_radioButton_toggled(bool checked);
+    void on_radioButton_wifi_toggled(bool checked);
 
-    void on_radioButton_2_toggled(bool checked);
+    void on_radioButton_bluetooth_toggled(bool checked);
 
-    void on_radioButton_3_toggled(bool checked);
+    void on_radioButton_gps_toggled(bool checked);
 
-    void on_pushButton_clicked();
+    void on_radioButton_quickhotspot_toggled(bool checked);
 
 private:
     Ui::qwikaccess *ui;
@@ -47,3 +47,4 @@ public:
     /* The Widget */
     QWidget *widget(QWidget *);
 };
+

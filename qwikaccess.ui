@@ -6,82 +6,84 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>399</width>
+    <height>197</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>qwikaccess</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>100</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>WIFI on/off</string>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>50</y>
-      <width>151</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Bluetooth 0n/off</string>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>90</y>
-      <width>100</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>GPS on/off</string>
-    </property>
-    <property name="autoExclusive">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>92</width>
-      <height>37</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Close</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QRadioButton" name="radioButton_quickhotspot">
+      <property name="text">
+       <string>WIFI Hotspot</string>
+      </property>
+      <property name="icon">
+       <iconset theme="network-wireless-hotspot"/>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton_wifi">
+      <property name="text">
+       <string>WIFI on/off</string>
+      </property>
+      <property name="icon">
+       <iconset theme="network-wireless"/>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton_bluetooth">
+      <property name="text">
+       <string>Bluetooth on/off</string>
+      </property>
+      <property name="icon">
+       <iconset theme="network-bluetooth"/>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="radioButton_gps">
+      <property name="text">
+       <string>GPS on/off</string>
+      </property>
+      <property name="icon">
+       <iconset theme="gps"/>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>399</width>
      <height>30</height>
     </rect>
    </property>

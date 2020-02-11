@@ -1,8 +1,39 @@
-QT       += core gui
+TEMPLATE = lib
+TARGET = qwikaccess
+
+QT += widgets
+
+VERSION = 2.8.0
+
+# Library section
+unix:!macx: LIBS += -lcprime
+
+# Disable warnings, enable threading support and c++11
+CONFIG  += thread silent build_all c++11 plugin
+
+# Build location
+BUILD_PREFIX = $$(CA_BUILD_DIR)
+isEmpty( BUILD_PREFIX ) {
+        BUILD_PREFIX = ./build
+}
+
+MOC_DIR       = $$BUILD_PREFIX/moc-plugins/
+OBJECTS_DIR   = $$BUILD_PREFIX/obj-plugins/
+RCC_DIR       = $$BUILD_PREFIX/qrc-plugins/
+UI_DIR        = $$BUILD_PREFIX/uic-plugins/
+
+unix {
+        isEmpty(PREFIX) {
+                PREFIX = /usr
+        }
+
+        DEFINES += VERSION_TEXT=\"\\\"$${VERSION}\\\"\"
+
+        INSTALLS += target
+        target.path = $$PREFIX/lib/coreapps/plugins
+}
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -25,7 +56,7 @@ HEADERS += \
 FORMS += \
     qwikaccess.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+#//# Default rules for deployment.
+#//qnx: target.path = /tmp/$${TARGET}/bin
+#//else: unix:!android: target.path = /opt/$${TARGET}/bin
+#//!isEmpty(target.path): INSTALLS += target

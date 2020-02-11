@@ -15,7 +15,7 @@ qwikaccess::~qwikaccess()
 
 #include <QProcess>
 
-void qwikaccess::on_radioButton_toggled(bool checked)
+void qwikaccess::on_radioButton_wifi_toggled(bool checked)
 {
     if(checked) //on
     {
@@ -29,9 +29,18 @@ void qwikaccess::on_radioButton_toggled(bool checked)
                 proc.startDetached("nmcli", QStringList() << "radio" << "wifi" << "off");
                 proc.waitForFinished(400);
     }
+    QProcess proc;
+        proc.startDetached("nmcli", QStringList() << "radio" << "wifi");
+        proc.waitForFinished(400);
+
+    QString f= proc.readAllStandardOutput();
+        if (f == "enabled")
+            qDebug()<< "enabled";
+        else
+            qDebug()<< "disabled";
 }
 
-void qwikaccess::on_radioButton_2_toggled(bool checked)
+void qwikaccess::on_radioButton_bluetooth_toggled(bool checked)
 {
     if(checked) //on
     {
@@ -47,7 +56,7 @@ void qwikaccess::on_radioButton_2_toggled(bool checked)
     }
 }
 
-void qwikaccess::on_radioButton_3_toggled(bool checked)
+void qwikaccess::on_radioButton_gps_toggled(bool checked)
 {
     if(checked) //on
     {
@@ -63,15 +72,30 @@ void qwikaccess::on_radioButton_3_toggled(bool checked)
     }
 }
 
-void qwikaccess::on_pushButton_clicked()
+void qwikaccess::on_radioButton_quickhotspot_toggled(bool checked)
 {
-    this->close();
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("nmcli", QStringList() << "-s" << "dev" << "wifi" << "hotspot" << "con-name" << "QuickHotspot" << "ssid" << "QuickHotspot" << "password"
+                                   << "pass123456789");
+                proc.waitForFinished(400);
+                ui->radioButton_quickhotspot->setText("QuickHotspot password: pass123456789");
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("nmcli", QStringList() << "con" << "down" << "QuickHotspot");
+                proc.waitForFinished(400);
+                ui->radioButton_quickhotspot->setText("Wifi Hotspot");
+    }
 }
+
 
 /* Name of the plugin */
 QString qwikaccessPlugin::name()
 {
-    return "qwikaccess";
+    return "Qwikaccess";
 }
 
 /* The plugin version */
@@ -79,7 +103,6 @@ QString qwikaccessPlugin::version()
 {
     return QString(VERSION_TEXT);
 }
-
 
 /* The Widget hooks for menus/toolbars */
 QWidget *qwikaccessPlugin::widget(QWidget *parent)
