@@ -6,73 +6,76 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>399</width>
-    <height>197</height>
+    <width>453</width>
+    <height>157</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>qwikaccess</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QRadioButton" name="radioButton_quickhotspot">
+     <widget class="QToolButton" name="toolButton_wifi">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wifi on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="text">
-       <string>WIFI Hotspot</string>
-      </property>
-      <property name="icon">
-       <iconset theme="network-wireless-hotspot"/>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton_wifi">
-      <property name="text">
-       <string>WIFI on/off</string>
+       <string/>
       </property>
       <property name="icon">
        <iconset theme="network-wireless"/>
       </property>
-      <property name="checked">
-       <bool>false</bool>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_bluetooth">
+     <widget class="QToolButton" name="toolButton_quickhotspot">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SSID: QuickHotspot&lt;/p&gt;&lt;p&gt;Password: pass123456789&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="text">
-       <string>Bluetooth on/off</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset theme="network-wireless-hotspot"/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QToolButton" name="toolButton_bluetooth">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bluetooth on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
       <property name="icon">
        <iconset theme="network-bluetooth"/>
       </property>
-      <property name="checked">
-       <bool>false</bool>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_gps">
+     <widget class="QToolButton" name="toolButton_gps">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GPS on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="text">
-       <string>GPS on/off</string>
+       <string/>
       </property>
       <property name="icon">
        <iconset theme="gps"/>
       </property>
-      <property name="checked">
-       <bool>false</bool>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -83,7 +86,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>399</width>
+     <width>453</width>
      <height>30</height>
     </rect>
    </property>
