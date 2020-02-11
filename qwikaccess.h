@@ -2,6 +2,7 @@
 #define QWIKACCESS_H
 
 #include <QMainWindow>
+#include <cprime/cplugininterface.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class qwikaccess; }
@@ -27,4 +28,22 @@ private slots:
 private:
     Ui::qwikaccess *ui;
 };
+
 #endif // QWIKACCESS_H
+class qwikaccessPlugin : public plugininterface {
+
+    Q_OBJECT
+
+    Q_PLUGIN_METADATA(IID COREACTION_PLUGININTERFACE/*"com.coreaction.plugininterface"*/)
+    Q_INTERFACES(plugininterface)
+
+public:
+    /* Name of the plugin */
+    QString name();
+
+    /* The plugin version */
+    QString version();
+
+    /* The Widget */
+    QWidget *widget(QWidget *);
+};

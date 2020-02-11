@@ -26,6 +26,9 @@
     <property name="text">
      <string>WIFI on/off</string>
     </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_2">
     <property name="geometry">
@@ -39,6 +42,9 @@
     <property name="text">
      <string>Bluetooth 0n/off</string>
     </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QRadioButton" name="radioButton_3">
     <property name="geometry">
@@ -51,6 +57,9 @@
     </property>
     <property name="text">
      <string>GPS on/off</string>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">

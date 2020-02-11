@@ -67,3 +67,22 @@ void qwikaccess::on_pushButton_clicked()
 {
     this->close();
 }
+
+/* Name of the plugin */
+QString qwikaccessPlugin::name()
+{
+    return "qwikaccess";
+}
+
+/* The plugin version */
+QString qwikaccessPlugin::version()
+{
+    return QString(VERSION_TEXT);
+}
+
+
+/* The Widget hooks for menus/toolbars */
+QWidget *qwikaccessPlugin::widget(QWidget *parent)
+{
+    return new qwikaccess(parent);
+}
