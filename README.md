@@ -1,2 +1,3 @@
 # qwikaccess
-qwik access for wifi bluetooth gps etc
+A Quick Access plugin for coreaction
+it toggles WIFI,BLUETOOTH,GPS,WIFI-HOTSPOT.
