@@ -1,16 +1,18 @@
 # qwikaccess
-A point and click Qt GUI for script that we use frequently.
+A point and click Qt GUI for scripts that we use frequently.
 
 <img src="qwikaccess.png" width="500">
 
 ### Dependancies
 * qt5-base
 
-### Optinal Dependancies for qwikaccess
+### Optional Dependancies for qwikaccess
+* polkit - for elevated privilage
 * ffmpeg - for screenshot & audio,screen,screencam recording.
 * v4l-utils - for camera.
 * libpulse - for audio/mic - mute/unmute - vol+/-.
-* brightnessctl - for brightness up and down .
+* brightnessctl - for brightness up and down.
+* xorg-xrdb - for autohidpi.
 * xorg-xrandr - for screen rotation.
 * xorg-xinput - for autorotation.
 * inotify-tools - for autorotation.
@@ -25,7 +27,7 @@ A point and click Qt GUI for script that we use frequently.
 
 ## Installation
 ```
-git clone https://github.com/librewish/qwikaccess
+git clone https://github.com/librewish/qwikaccess.git
 cd qwikaccess
 qmake && make
 make install

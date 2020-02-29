@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=qwikaccess
+Comment=A quick access utility for various type of actions
+Exec=qwikaccess
+TryExec=/usr/bin/qwikaccess
+Terminal=false
+Icon=/usr/share/icons/hicolor/scalable/apps/qwikaccess.svg
+Type=Application
+Categories=Qt;System;
+StartupNotify=true
