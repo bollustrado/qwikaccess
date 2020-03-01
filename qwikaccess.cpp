@@ -278,6 +278,41 @@ void qwikaccess::on_pushButton_rmautohidpi_clicked()
                     proc.waitForFinished(400);
 }
 
+void qwikaccess::on_pushButton_restartwifi_clicked()
+{
+    QProcess proc;
+            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-wifi.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_pushButton_restartbt_clicked()
+{
+    QProcess proc;
+            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-bt.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_pushButton_restartusb_clicked()
+{
+    QProcess proc;
+            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-usb.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_pushButton_restartkeyboard_clicked()
+{
+    QProcess proc;
+            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-keyboard.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_pushButton_restarttouchpad_clicked()
+{
+    QProcess proc;
+            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-touchpad.sh");
+            proc.waitForFinished(400);
+}
+
 void qwikaccess::on_toolButton_wifi_clicked(bool checked)
 {
     if(checked) //on
@@ -309,6 +344,7 @@ void qwikaccess::on_toolButton_quickhotspot_clicked(bool checked)
         QProcess proc;
                 proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/hotspot-off.sh");
                 proc.waitForFinished(400);
+                ui->hotspot->setText("Hotspot");
     }
 }
 
@@ -440,6 +476,38 @@ void qwikaccess::on_toolButton_cameraoff_clicked(bool checked)
     }
 }
 
+void qwikaccess::on_toolButton_touchpadoff_clicked(bool checked)
+{
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchpad-off.sh");
+                proc.waitForFinished(400);
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchpad-on.sh");
+                proc.waitForFinished(400);
+    }
+}
+
+void qwikaccess::on_toolButton_touchscreenoff_clicked(bool checked)
+{
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/touchscreen-off.sh");
+                proc.waitForFinished(400);
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchscreen-on.sh");
+                proc.waitForFinished(400);
+    }
+}
+
 void qwikaccess::on_toolButton_lockscreen_clicked()
 {
     QProcess proc;
@@ -472,5 +540,19 @@ void qwikaccess::on_toolButton_reboot_clicked()
 {
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/reboot.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_hibernate_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/hibernate.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_rebbotuefi_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/reboot-to-uefi.sh");
             proc.waitForFinished(400);
 }

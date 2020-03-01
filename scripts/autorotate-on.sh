@@ -23,9 +23,10 @@ monitor-sensor > /dev/shm/sensor.log 2>&1 &
 # Initialize display orientation to 'normal'
 # Without this, the display often starts in 'inverted' (or 'bottom-up') mode!
 xrandr --output $(xrandr | egrep -o '^.+ connected' | cut -d " " -f 1) --rotate normal
-xinput set-prop 13 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1
-xinput set-prop 11  "Device Enabled" 1
-xinput set-prop 10  "Device Enabled" 1
+xinput set-prop $touchscreenid 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1
+xinput set-prop $touchscreenid  "Device Enabled" 1
+#xinput set-prop $touchpadid  "Device Enabled" 1
+#xinput set-prop 10  "Device Enabled" 1
 
 # Parse output of monitor sensor to get the new orientation whenever the log file is updated
 # Possibles are: normal, bottom-up, right-up, left-up
@@ -34,33 +35,34 @@ while inotifywait -e modify /dev/shm/sensor.log; do
 
 # Read the last few lines that were added to the file and get the last orientation line.
 ORIENTATION=$(tail /dev/shm/sensor.log | grep 'orientation' | tail -1 | grep -oE '[^ ]+$')
-
+touchscreenid=$(xinput --list | grep -i 'touchscreen' | grep -o 'id=[0-9]*' | sed 's/id=//')
+touchpadid=$(xinput --list | grep -i 'touchpad' | grep -o 'id=[0-9]*' | sed 's/id=//')
 # Set the actions to be taken for each possible orientation
 case "$ORIENTATION" in
 bottom-up)
 xrandr --output $(xrandr | egrep -o '^.+ connected' | cut -d " " -f 1) --rotate inverted
-xinput set-prop 10  "Device Enabled" 0
-xinput set-prop 11  "Device Enabled" 0
-xinput set-prop 13  "Device Enabled" 1
-xinput set-prop 13 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1;;
+#xinput set-prop 10  "Device Enabled" 0
+#xinput set-prop $touchpadid  "Device Enabled" 0
+xinput set-prop $touchscreenid  "Device Enabled" 1
+xinput set-prop $touchscreenid 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1;;
 normal)
 xrandr --output $(xrandr | egrep -o '^.+ connected' | cut -d " " -f 1) --rotate normal
-xinput set-prop 10  "Device Enabled" 1
-xinput set-prop 11  "Device Enabled" 1
-xinput set-prop 13  "Device Enabled" 1
-xinput set-prop 13 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1;;
+#xinput set-prop 10  "Device Enabled" 1
+#xinput set-prop $touchpadid  "Device Enabled" 1
+xinput set-prop $touchscreenid  "Device Enabled" 1
+xinput set-prop $touchscreenid 'Coordinate Transformation Matrix' 1 0 0 0 1 0 0 0 1;;
 right-up)
 xrandr --output $(xrandr | egrep -o '^.+ connected' | cut -d " " -f 1) --rotate right
-xinput set-prop 10  "Device Enabled" 0
-xinput set-prop 11  "Device Enabled" 0
-xinput set-prop 13  "Device Enabled" 1
-xinput set-prop 13 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1;;
+#xinput set-prop 10  "Device Enabled" 0
+#xinput set-prop $touchpadid  "Device Enabled" 0
+xinput set-prop $touchscreenid  "Device Enabled" 1
+xinput set-prop $touchscreenid 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1;;
 left-up)
 xrandr --output $(xrandr | egrep -o '^.+ connected' | cut -d " " -f 1) --rotate left
-xinput set-prop 10  "Device Enabled" 0
-xinput set-prop 11  "Device Enabled" 0
-xinput set-prop 13  "Device Enabled" 1
-xinput set-prop 13 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1;;
+#xinput set-prop 10  "Device Enabled" 0
+#xinput set-prop $touchpadid  "Device Enabled" 0
+xinput set-prop $touchscreenid  "Device Enabled" 1
+xinput set-prop $touchscreenid 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1;;
 esac
 done
 

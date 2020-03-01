@@ -14,7 +14,7 @@ A point and click Qt GUI for scripts that we use frequently.
 * brightnessctl - for brightness up and down.
 * xorg-xrdb - for autohidpi.
 * xorg-xrandr - for screen rotation.
-* xorg-xinput - for autorotation.
+* xorg-xinput - for touchpad touchscreen on/off.
 * inotify-tools - for autorotation.
 * iio-sensor-proxy - for autorotation.
 * redshift - for night mode.
@@ -23,6 +23,8 @@ A point and click Qt GUI for scripts that we use frequently.
 * rfkill (util-linux) for airplane mode.
 * xdg-utils for lock screen (xdg-screensaver lock).
 * systemd - for leave commands and gps services. 
+* libnotify - for notifications
+* wmctrl - for screencam ffplay to be above all window
 * grep - used in scripts.
 
 ## Installation

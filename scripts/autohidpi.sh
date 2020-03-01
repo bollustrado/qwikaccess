@@ -48,12 +48,4 @@ MPPP=$(printf 'user_pref("layout.css.devPixelsPerPx", "'"$FV"'");')
 # sudo -H -u $YOU sed -i '$a\' $TBPRO/user.js ;
 # sudo -H -u $YOU printf "$MPPP" >> $TBPRO/user.js ;
 
-
-# sed -i -e "/$MPPP/d" $TBPRO/user.js ;
-# sed -i -e "/$MPPP/d" $FFPRO/user.js ;
-# sed -i -e "/GDK_SCALE=$FV/d" /etc/environment ;
-# sed -i -e "/QT_AUTO_SCREEN_SCALE_FACTOR=1/d" /etc/environment ;
-# sed -i -e "s/ -dpi $DPI//g" /etc/sddm.conf ;
-# sudo -H -u $YOU kwriteconfig5 --file /home/$YOU/.config/kcmfonts --group "General" --key "forceFontDPI" "96" ; 
-
 exit
