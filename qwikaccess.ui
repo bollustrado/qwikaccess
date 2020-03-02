@@ -319,7 +319,7 @@
             <item row="2" column="4" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_kbdbacklight">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;keyboard backligh on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;keyboard backlight on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>...</string>
@@ -427,11 +427,15 @@
             </item>
             <item row="4" column="3" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_displayoff">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to turn off display&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="monitor"/>
+               <iconset theme="monitor">
+                <normaloff>.</normaloff>.</iconset>
               </property>
              </widget>
             </item>
@@ -493,14 +497,13 @@
             <item row="0" column="2" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_brightness">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;clicking will change brighness to dim(50%) and full&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;clicking will change brighness to dim(50%) and full(100%)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="display-brightness-symbolic">
-                <normaloff>.</normaloff>.</iconset>
+               <iconset theme="contrast"/>
               </property>
              </widget>
             </item>
@@ -746,7 +749,7 @@
                </font>
               </property>
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to reset bios&lt;/p&gt;&lt;p&gt;it maight not work on uefi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to reset bios&lt;/p&gt;&lt;p&gt;it might not work on uefi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>clear cmos</string>
@@ -1111,6 +1114,9 @@
             </item>
             <item row="2" column="2" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_hybridsleep">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;suspends the system both to RAM and disk, so a complete power loss does not result in lost data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>...</string>
               </property>
@@ -1146,6 +1152,9 @@
             </item>
             <item row="2" column="3" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_suspenthenhibernate">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;initially suspends the system to RAM and if it is not interrupted then the system will be woken using an RTC alarm and hibernated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>...</string>
               </property>
@@ -1226,6 +1235,9 @@
             </item>
             <item row="0" column="4" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_rebbotuefi">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;system's firmware UEFI setup utility to show at next boot&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
               <property name="text">
                <string>...</string>
               </property>

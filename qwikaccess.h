@@ -123,7 +123,7 @@ private slots:
 
     void on_toolButton_suspenthenhibernate_clicked();
 
-    void on_toolButton_displayoff_clicked(bool checked);
+    void on_toolButton_displayoff_clicked();
 
 private:
     Ui::qwikaccess *ui;
