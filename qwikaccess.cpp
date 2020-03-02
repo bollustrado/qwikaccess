@@ -572,3 +572,33 @@ void qwikaccess::on_toolButton_kbdbacklight_clicked(bool checked)
                 proc.waitForFinished(400);
     }
 }
+
+void qwikaccess::on_toolButton_hybridsleep_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/hybrid-sleep.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_suspenthenhibernate_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/suspend-then-hibernate.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_displayoff_clicked(bool checked)
+{
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-off.sh");
+                proc.waitForFinished(400);
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-on.sh");
+                proc.waitForFinished(400);
+    }
+}
