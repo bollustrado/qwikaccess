@@ -556,3 +556,19 @@ void qwikaccess::on_toolButton_rebbotuefi_clicked()
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/reboot-to-uefi.sh");
             proc.waitForFinished(400);
 }
+
+void qwikaccess::on_toolButton_clicked(bool checked)
+{
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/kbd-backlight-on.sh");
+                proc.waitForFinished(400);
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/kbd-backlight-off.sh");
+                proc.waitForFinished(400);
+    }
+}
