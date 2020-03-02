@@ -29,7 +29,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-308</y>
          <width>609</width>
          <height>940</height>
         </rect>
@@ -212,6 +212,9 @@
                <iconset theme="battery-full-charging">
                 <normaloff>.</normaloff>.</iconset>
               </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="3" column="1" alignment="Qt::AlignHCenter">
@@ -300,6 +303,9 @@
                <iconset theme="battery">
                 <normaloff>.</normaloff>.</iconset>
               </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="3" column="2" alignment="Qt::AlignHCenter">
@@ -327,6 +333,9 @@
               <property name="icon">
                <iconset theme="input-keyboard-virtual-on">
                 <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -385,6 +394,9 @@
                <iconset theme="input-tablet">
                 <normaloff>.</normaloff>.</iconset>
               </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="5" column="1" alignment="Qt::AlignHCenter">
@@ -410,6 +422,9 @@
               <property name="icon">
                <iconset theme="input-touchpad">
                 <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -503,7 +518,11 @@
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="contrast"/>
+               <iconset theme="contrast">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
