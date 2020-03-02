@@ -129,13 +129,13 @@ void qwikaccess::on_toolButton_brightness_clicked(bool checked)
     {
         QProcess proc;
                 proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/brightdim.sh");
-                proc.waitForFinished(400);
+               // proc.waitForFinished(400);
     }
     else //off
     {
         QProcess proc;
                 proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/brightfull.sh");
-                proc.waitForFinished(400);
+               // proc.waitForFinished(400);
     }
 }
 
