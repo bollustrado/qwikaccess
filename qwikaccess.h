@@ -117,7 +117,7 @@ private slots:
 
     void on_toolButton_rebbotuefi_clicked();
 
-    void on_toolButton_clicked(bool checked);
+    void on_toolButton_kbdbacklight_clicked(bool checked);
 
 private:
     Ui::qwikaccess *ui;

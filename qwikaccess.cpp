@@ -557,7 +557,7 @@ void qwikaccess::on_toolButton_rebbotuefi_clicked()
             proc.waitForFinished(400);
 }
 
-void qwikaccess::on_toolButton_clicked(bool checked)
+void qwikaccess::on_toolButton_kbdbacklight_clicked(bool checked)
 {
     if(checked) //on
     {
