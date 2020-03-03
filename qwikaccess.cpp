@@ -1,11 +1,17 @@
 #include "qwikaccess.h"
 #include "ui_qwikaccess.h"
-
-qwikaccess::qwikaccess(QWidget *parent)
+#include <QTimer>
+#include <QProcess>
+#include <QDebug>
+#include <QPixmap>
+qwikaccess::qwikaccess(QWidget *parent) 
     : QMainWindow(parent)
-    , ui(new Ui::qwikaccess)
+    , ui(new Ui::qwikaccess),
+    timer(new QTimer(this))
 {
     ui->setupUi(this);
+    init();
+    check_status();
 }
 
 qwikaccess::~qwikaccess()
@@ -13,9 +19,44 @@ qwikaccess::~qwikaccess()
     delete ui;
 }
 
-#include <QProcess>
-#include <QDebug>
+void qwikaccess::init()
+{
+    // connections
+    connect(timer, &QTimer::timeout, this, &qwikaccess::get_playing_media);
 
+    // 1 second timer
+    timer->start(1000);
+
+    // initialization
+    get_playing_media();
+
+
+}
+
+void qwikaccess::get_playing_media()
+{
+    QProcess proc;
+    proc.start("playerctl", QStringList() << "metadata" << "title");
+     proc.waitForFinished(400);
+    QString t=proc.readAllStandardOutput();
+    proc.start("playerctl", QStringList() << "status");
+     proc.waitForFinished(400);
+    QString s=proc.readAllStandardOutput();
+    ui->title->setText(s + t);
+}
+
+void qwikaccess::check_status()
+{
+    QProcess proc;
+            proc.start("nmcli", QStringList()<< "radio" << "wifi");
+            proc.waitForFinished(400);
+            QString w=proc.readAllStandardOutput();
+            if(w == "enabled")
+                ui->toolButton_wifi->setChecked(true);
+            else
+                ui->toolButton_wifi->setChecked(false);
+
+}
 
 void qwikaccess::on_toolButton_camera_clicked()
 {
@@ -153,22 +194,6 @@ void qwikaccess::on_pushButton_brightdown_clicked()
             proc.waitForFinished(400);
 }
 
-
-
-void qwikaccess::on_pushButton_dpmsoff_clicked()
-{
-    QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-off.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_dpmson_clicked()
-{
-    QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-on.sh");
-            proc.waitForFinished(400);
-}
-
 void qwikaccess::on_toolButton_micmute_clicked(bool checked)
 {
     if(checked) //on
@@ -196,50 +221,6 @@ void qwikaccess::on_pushButton_micvoldown_clicked()
 {
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/micvoldown.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_toolButton_rotate_clicked(bool checked)
-{
-    if(checked) //on
-    {
-        QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-on.sh");
-                proc.waitForFinished(400);
-    }
-    else //off
-    {
-        QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-off.sh");
-                proc.waitForFinished(400);
-    }
-}
-
-void qwikaccess::on_pushButton_rotatenormal_clicked()
-{
-    QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-normal.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_rotateleft_clicked()
-{
-    QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-left.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_rotateinvert_clicked()
-{
-    QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-invert.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_rotateright_clicked()
-{
-    QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-right.sh");
             proc.waitForFinished(400);
 }
 
@@ -591,5 +572,89 @@ void qwikaccess::on_toolButton_displayoff_clicked()
 {
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-off.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_prev_clicked()
+{
+    QProcess proc;
+    proc.startDetached("playerctl", QStringList()<< "previous");
+}
+
+void qwikaccess::on_toolButton_play_clicked()
+{
+    QProcess proc;
+    proc.startDetached("playerctl", QStringList()<< "play");
+}
+
+void qwikaccess::on_toolButton_pause_clicked()
+{
+    QProcess proc;
+    proc.startDetached("playerctl", QStringList()<< "pause");
+}
+
+void qwikaccess::on_toolButton_next_clicked()
+{
+    QProcess proc;
+    proc.startDetached("playerctl", QStringList()<< "next");
+}
+
+void qwikaccess::on_toolButton_shuffle_clicked(bool checked)
+{
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("playerctl", QStringList()<< "shuffle" << "on");
+                proc.waitForFinished(400);
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("playerctl", QStringList()<< "shuffle" << "off");
+                proc.waitForFinished(400);
+    }
+}
+
+void qwikaccess::on_toolButton_autorotate_clicked(bool checked)
+{
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-on.sh");
+                proc.waitForFinished(400);
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-off.sh");
+                proc.waitForFinished(400);
+    }
+}
+
+void qwikaccess::on_toolButton_rotateleft_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-left.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_rotatenormal_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-normal.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_rotateright_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-right.sh");
+            proc.waitForFinished(400);
+}
+
+void qwikaccess::on_toolButton_rotateinvert_clicked()
+{
+    QProcess proc;
+            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-invert.sh");
             proc.waitForFinished(400);
 }

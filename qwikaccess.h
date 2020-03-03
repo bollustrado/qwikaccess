@@ -39,25 +39,11 @@ private slots:
 
     void on_pushButton_brightdown_clicked();
 
-    void on_pushButton_dpmsoff_clicked();
-
-    void on_pushButton_dpmson_clicked();
-
     void on_toolButton_micmute_clicked(bool checked);
 
     void on_pushButton_micvolup_clicked();
 
     void on_pushButton_micvoldown_clicked();
-
-    void on_toolButton_rotate_clicked(bool checked);
-
-    void on_pushButton_rotatenormal_clicked();
-
-    void on_pushButton_rotateleft_clicked();
-
-    void on_pushButton_rotateinvert_clicked();
-
-    void on_pushButton_rotateright_clicked();
 
     void on_pushButton_clearram_clicked();
 
@@ -125,7 +111,34 @@ private slots:
 
     void on_toolButton_displayoff_clicked();
 
+    void get_playing_media();
+
+    void check_status();
+
+    void init();
+
+    void on_toolButton_prev_clicked();
+
+    void on_toolButton_play_clicked();
+
+    void on_toolButton_pause_clicked();
+
+    void on_toolButton_next_clicked();
+
+    void on_toolButton_shuffle_clicked(bool checked);
+
+    void on_toolButton_autorotate_clicked(bool checked);
+
+    void on_toolButton_rotateleft_clicked();
+
+    void on_toolButton_rotatenormal_clicked();
+
+    void on_toolButton_rotateright_clicked();
+
+    void on_toolButton_rotateinvert_clicked();
+
 private:
     Ui::qwikaccess *ui;
+    QTimer *timer;
 };
 #endif // QWIKACCESS_H
