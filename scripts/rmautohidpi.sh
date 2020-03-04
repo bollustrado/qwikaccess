@@ -18,16 +18,26 @@ DPI=$(bc <<< "scale = 0;  $RV / 1")
 # Generate a "fractional value" (FV) from a 96dpi default (ie: 120 = 1.25)
 FV=$(bc <<< "scale = 2;  $DPI / 96")
 # And where are your firefox and thunderbird profiles?
-FFPRO=$(find /home/$YOU/.mozilla/firefox -name "*.default" -print)
-TBPRO=$(find /home/$YOU/.thunderbird/ -name "*.default" -print)
-MPPP=$(printf 'user_pref("layout.css.devPixelsPerPx", "'"$FV"'");')
 
+MPPP=$(printf 'user_pref("layout.css.devPixelsPerPx", "'"$FV"'");')
+if [ "`which thunderbird`" ]; then
+TBPRO=$(find /home/$YOU/.thunderbird/ -name "*.default" -print)
  sed -i -e "/$MPPP/d" $TBPRO/user.js ;
+fi
+
+
+if [ "`which firefox`" ]; then
+FFPRO=$(find /home/$YOU/.mozilla/firefox -name "*.default" -print)
  sed -i -e "/$MPPP/d" $FFPRO/user.js ;
- sed -i -e "/GDK_SCALE=$FV/d" /etc/environment ;
- sed -i -e "/QT_AUTO_SCREEN_SCALE_FACTOR=1/d" /etc/environment ;
- sed -i -e "s/ -dpi $DPI//g" /etc/sddm.conf ;
+fi
+
+
+ sed -i -e "/export GDK_SCALE=$FV/d" /home/$YOU/.profile ;
+ sed -i -e "/export QT_AUTO_SCREEN_SCALE_FACTOR=1/d" /home/$YOU/.profile ;
+ #sed -i -e "s/ -dpi $DPI//g" /etc/sddm.conf ;
 # sudo -H -u $YOU 
+if [ "`which kwriteconfig5`" ]; then
 kwriteconfig5 --file /home/$YOU/.config/kcmfonts --group "General" --key "forceFontDPI" "96" ; 
+fi
 
 exit

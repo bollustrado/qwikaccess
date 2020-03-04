@@ -248,14 +248,14 @@ void qwikaccess::on_pushButton_clearcache_clicked()
 void qwikaccess::on_pushButton_autohidpi_clicked()
 {
     QProcess proc;
-                    proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/autohidpi.sh");
+                    proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/autohidpi.sh");
                     proc.waitForFinished(400);
 }
 
 void qwikaccess::on_pushButton_rmautohidpi_clicked()
 {
     QProcess proc;
-                    proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/rmautohidpi.sh");
+                    proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rmautohidpi.sh");
                     proc.waitForFinished(400);
 }
 
