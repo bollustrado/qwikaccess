@@ -8,6 +8,7 @@ A point and click Qt GUI for scripts that we use frequently.
 
 ### Optional Dependancies for qwikaccess
 * polkit - for elevated privilage
+* playerctl - for media player controls
 * ffmpeg - for screenshot & audio,screen,screencam recording.
 * v4l-utils - for camera.
 * libpulse - for audio/mic - mute/unmute - vol+/-.
