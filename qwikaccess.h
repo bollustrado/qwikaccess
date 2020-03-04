@@ -137,6 +137,8 @@ private slots:
 
     void on_toolButton_rotateinvert_clicked();
 
+    void on_toolButton_clicked(bool checked);
+
 private:
     Ui::qwikaccess *ui;
     QTimer *timer;

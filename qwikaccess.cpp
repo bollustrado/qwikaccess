@@ -658,3 +658,19 @@ void qwikaccess::on_toolButton_rotateinvert_clicked()
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-invert.sh");
             proc.waitForFinished(400);
 }
+
+void qwikaccess::on_toolButton_clicked(bool checked)
+{
+    if(checked) //on
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/keyboard-off.sh");
+                proc.waitForFinished(400);
+    }
+    else //off
+    {
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/keyboard-on.sh");
+                proc.waitForFinished(400);
+    }
+}
