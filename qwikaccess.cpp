@@ -478,7 +478,7 @@ void qwikaccess::on_toolButton_touchscreenoff_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/touchscreen-off.sh");
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchscreen-off.sh");
                 proc.waitForFinished(400);
     }
     else //off
