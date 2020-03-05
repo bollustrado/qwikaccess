@@ -325,6 +325,9 @@
               <property name="checkable">
                <bool>true</bool>
               </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
              </widget>
             </item>
             <item row="3" column="1" alignment="Qt::AlignHCenter">
@@ -449,7 +452,8 @@
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="input-keyboard"/>
+               <iconset theme="input-keyboard">
+                <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
                <bool>true</bool>
@@ -551,6 +555,9 @@
                <iconset theme="media-playback-start">
                 <normaloff>.</normaloff>.</iconset>
               </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="1" column="3" alignment="Qt::AlignHCenter">
@@ -561,6 +568,9 @@
               <property name="icon">
                <iconset theme="media-playback-pause">
                 <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -1402,6 +1412,9 @@
                <iconset theme="object-rotate-right">
                 <normaloff>.</normaloff>.</iconset>
               </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="1" column="0" alignment="Qt::AlignHCenter">
@@ -1436,6 +1449,9 @@
               <property name="icon">
                <iconset theme="object-rotate-left">
                 <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -1474,6 +1490,9 @@
                <iconset theme="transform-rotate">
                 <normaloff>.</normaloff>.</iconset>
               </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
             <item row="0" column="1" alignment="Qt::AlignHCenter">
@@ -1484,6 +1503,9 @@
               <property name="icon">
                <iconset theme="transform-rotate">
                 <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>

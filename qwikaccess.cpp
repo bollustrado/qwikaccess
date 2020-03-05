@@ -4,6 +4,7 @@
 #include <QProcess>
 #include <QDebug>
 #include <QPixmap>
+#include <QTime>
 qwikaccess::qwikaccess(QWidget *parent) 
     : QMainWindow(parent)
     , ui(new Ui::qwikaccess),
@@ -11,7 +12,7 @@ qwikaccess::qwikaccess(QWidget *parent)
 {
     ui->setupUi(this);
     init();
-    check_status();
+
 }
 
 qwikaccess::~qwikaccess()
@@ -23,14 +24,23 @@ void qwikaccess::init()
 {
     // connections
     connect(timer, &QTimer::timeout, this, &qwikaccess::get_playing_media);
+    connect(timer, &QTimer::timeout, this, &qwikaccess::check_status);
 
     // 1 second timer
     timer->start(1000);
 
     // initialization
     get_playing_media();
+    check_status();
 
 
+}
+
+void delay()
+{
+    QTime dieTime= QTime::currentTime().addSecs(2);
+    while (QTime::currentTime() < dieTime)
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
 void qwikaccess::get_playing_media()
@@ -43,18 +53,141 @@ void qwikaccess::get_playing_media()
      proc.waitForFinished(400);
     QString s=proc.readAllStandardOutput();
     ui->title->setText(s + t);
+    if( s == "Playing\n")
+        ui->toolButton_play->setChecked(true);
+    else
+        ui->toolButton_play->setChecked(false);
+    if( s == "Paused\n")
+        ui->toolButton_pause->setChecked(true);
+    else
+        ui->toolButton_pause->setChecked(false);
+
 }
 
 void qwikaccess::check_status()
 {
+
     QProcess proc;
+
+    //wifi status
+
             proc.start("nmcli", QStringList()<< "radio" << "wifi");
-            proc.waitForFinished(400);
-            QString w=proc.readAllStandardOutput();
-            if(w == "enabled")
+            proc.waitForFinished();
+
+           QString wifi=proc.readAllStandardOutput();
+           wifi = wifi.trimmed();
+            //qDebug()<< wifi;
+            //ui->wifi->setText(w);
+            if( wifi == "enabled")
                 ui->toolButton_wifi->setChecked(true);
             else
                 ui->toolButton_wifi->setChecked(false);
+
+            // bluetooth status
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-bt.sh");
+            proc.waitForFinished();
+
+           QString bt=proc.readAllStandardOutput();
+           bt = bt.trimmed();
+            //qDebug()<< bt;
+            if( bt == "yes")
+                ui->toolButton_nightmode->setChecked(true);
+            else
+                ui->toolButton_nightmode->setChecked(false);
+
+            //airplanemode status
+
+            proc.start("nmcli", QStringList()<< "networking");
+            proc.waitForFinished();
+
+           QString airp=proc.readAllStandardOutput();
+           airp = airp.trimmed();
+            if( airp == "disabled")
+                ui->toolButton_airplanemode->setChecked(true);
+            else
+                ui->toolButton_airplanemode->setChecked(false);
+
+            //gps
+            proc.start("systemctl", QStringList()<< "is-enabled" << "geoclue");
+            proc.waitForFinished();
+
+           QString gps=proc.readAllStandardOutput();
+           gps = gps.trimmed();
+            //qDebug()<< gps;
+            if( gps == "static")
+                ui->toolButton_gps->setChecked(true);
+            else
+                ui->toolButton_gps->setChecked(false);
+
+       //performance mode status
+
+            proc.start("cat", QStringList()<< "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor");
+            proc.waitForFinished();
+
+           QString gov=proc.readAllStandardOutput();
+           gov = gov.trimmed();
+            //qDebug()<< gov;
+            if( gov == "performance")
+                ui->toolButton_performacemode->setChecked(true);
+            else
+                ui->toolButton_performacemode->setChecked(false);
+
+            //batarysaver status
+            if( gov == "powersave")
+                ui->toolButton_batterysaver->setChecked(true);
+            else
+                ui->toolButton_batterysaver->setChecked(false);
+
+            //flashlight status
+
+            proc.start("cat", QStringList()<< "/sys/class/leds/led:switch/brightness");
+            proc.waitForFinished();
+
+           QString flash=proc.readAllStandardOutput();
+           flash = flash.trimmed();
+            //qDebug()<< flash;
+            if( flash == "1")
+                ui->toolButton_flashlight->setChecked(true);
+            else
+                ui->toolButton_flashlight->setChecked(false);
+
+            // nightmode status
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-nightmode.sh");
+            proc.waitForFinished();
+
+           QString night=proc.readAllStandardOutput();
+           night = night.trimmed();
+            //qDebug()<< night;
+            if( night == "enabled")
+                ui->toolButton_nightmode->setChecked(true);
+            else
+                ui->toolButton_nightmode->setChecked(false);
+
+            //rotation status
+
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-rotation.sh");
+            proc.waitForFinished();
+
+           QString rot=proc.readAllStandardOutput();
+           rot = rot.trimmed();
+            //qDebug()<< rot;
+            if( rot == "normal")
+                ui->toolButton_rotatenormal->setChecked(true);
+            else
+                ui->toolButton_rotatenormal->setChecked(false);
+            if( rot == "left")
+                ui->toolButton_rotateleft->setChecked(true);
+            else
+                ui->toolButton_rotateleft->setChecked(false);
+            if( rot == "right")
+                ui->toolButton_rotateright->setChecked(true);
+            else
+                ui->toolButton_rotateright->setChecked(false);
+            if( rot == "invert")
+                ui->toolButton_rotateinvert->setChecked(true);
+            else
+                ui->toolButton_rotateinvert->setChecked(false);
+
 
 }
 
@@ -366,7 +499,7 @@ void qwikaccess::on_toolButton_nightmode_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/nightmode-on.sh");
+                proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/nightmode-on.sh");
                 proc.waitForFinished(400);
     }
     else //off
