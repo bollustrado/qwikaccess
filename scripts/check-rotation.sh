@@ -1,2 +1,2 @@
 #!/bin/bash
-xrandr -q --verbose| grep HDMI| cut -d ' ' -f6
+xrandr -q --verbose| grep $(xrandr | egrep -o '^.+ connected' | cut -d " " -f 1)| cut -d ' ' -f6
