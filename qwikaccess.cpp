@@ -91,9 +91,9 @@ void qwikaccess::check_status()
            bt = bt.trimmed();
             //qDebug()<< bt;
             if( bt == "yes")
-                ui->toolButton_nightmode->setChecked(true);
+                ui->toolButton_bluetooth->setChecked(true);
             else
-                ui->toolButton_nightmode->setChecked(false);
+                ui->toolButton_bluetooth->setChecked(false);
 
             //airplanemode status
 
