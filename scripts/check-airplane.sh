@@ -1,8 +1,8 @@
 #!/bin/bash
-if [ $(connmanctl state | awk '/OfflineMode/ { print $NF }') == "True" || $(nmcli networking) == "disabled" ]; then
+if [ $(nmcli networking) == "disabled" ]; then
 echo "enabled"
-fi
-
-if [ $(connmanctl state | awk '/OfflineMode/ { print $NF }') == "False" || $(nmcli networking) == "enabled" ]; then
+elif [ $(connmanctl state | awk '/OfflineMode/ { print $NF }') == "True" ] ; then
+echo "enabled"
+else
 echo "disabled"
 fi
