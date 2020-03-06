@@ -29,7 +29,7 @@ unix {
         }
         BINDIR = $$PREFIX/bin
 
-	SCRIPTS_PATH = $$PREFIX/share/qwikaccess/scripts
+	SCRIPTS_PATH = $$PREFIX/share/qwikaccess
 
         target.path = $$BINDIR
 
