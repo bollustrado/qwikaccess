@@ -1265,7 +1265,7 @@
                </font>
               </property>
               <property name="text">
-               <string>audio vol+</string>
+               <string>vol+</string>
               </property>
              </widget>
             </item>
@@ -1277,7 +1277,7 @@
                </font>
               </property>
               <property name="text">
-               <string>audio vol-</string>
+               <string>vol-</string>
               </property>
              </widget>
             </item>
