@@ -98,7 +98,7 @@ void qwikaccess::check_status()
     proc.waitForFinished();
 
    QString micvolume=proc.readAllStandardOutput();
-   audiovolume = audiovolume.trimmed();
+   micvolume = micvolume.trimmed();
 
     //mic mute status
     proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-mic-mute.sh");
