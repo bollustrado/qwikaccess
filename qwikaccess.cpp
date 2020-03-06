@@ -68,6 +68,56 @@ void qwikaccess::check_status()
 {
 
     QProcess proc;
+    // audio volume level
+    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-audio-volume.sh");
+    proc.waitForFinished();
+
+   QString audiovolume=proc.readAllStandardOutput();
+   audiovolume = audiovolume.trimmed();
+
+    //audio mute status
+    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-audio-mute.sh");
+    proc.waitForFinished();
+
+   QString audiomute=proc.readAllStandardOutput();
+   audiomute = audiomute.trimmed();
+    //qDebug()<< audiomute;
+    if( audiomute == "muted")
+    {
+        ui->toolButton_audiomute->setChecked(true);
+        ui->audiomute->setText(audiomute);
+    }
+    else
+    {
+        ui->toolButton_audiomute->setChecked(false);
+        ui->audiomute->setText(audiovolume);
+    }
+
+    // mic volume level
+    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-mic-volume.sh");
+    proc.waitForFinished();
+
+   QString micvolume=proc.readAllStandardOutput();
+   audiovolume = audiovolume.trimmed();
+
+    //mic mute status
+    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-mic-mute.sh");
+    proc.waitForFinished();
+
+   QString micmute=proc.readAllStandardOutput();
+   micmute = micmute.trimmed();
+    //qDebug()<< audiomute;
+    if( micmute == "muted")
+    {
+        ui->toolButton_micmute->setChecked(true);
+        ui->micmute->setText(micmute);
+    }
+    else
+    {
+        ui->toolButton_micmute->setChecked(false);
+        ui->micmute->setText(micvolume);
+    }
+
 
     //wifi status
 
