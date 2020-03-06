@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=qwikaccess
+Name=Qwikaccess
 Comment=A quick access utility for various type of actions
 Exec=qwikaccess
 TryExec=/usr/bin/qwikaccess
