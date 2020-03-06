@@ -229,11 +229,22 @@ void qwikaccess::check_status()
 
            QString camera=proc.readAllStandardOutput();
            camera = camera.trimmed();
-            //qDebug()<< touchscreen;
+            //qDebug()<< camera;
             if( camera == "disabled")
                 ui->toolButton_cameraoff->setChecked(true);
             else
                 ui->toolButton_cameraoff->setChecked(false);
+            // kbd-backlight status
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-backlight.sh");
+            proc.waitForFinished();
+
+           QString kbd=proc.readAllStandardOutput();
+           kbd = kbd.trimmed();
+            //qDebug()<< kbd;
+            if( kbd == "enabled")
+                ui->toolButton_kbdbacklight->setChecked(true);
+            else
+                ui->toolButton_kbdbacklight->setChecked(false);
 
 
 
