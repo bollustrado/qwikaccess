@@ -223,6 +223,17 @@ void qwikaccess::check_status()
                 ui->toolButton_touchscreenoff->setChecked(true);
             else
                 ui->toolButton_touchscreenoff->setChecked(false);
+            // camera off status
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-camera.sh");
+            proc.waitForFinished();
+
+           QString camera=proc.readAllStandardOutput();
+           camera = camera.trimmed();
+            //qDebug()<< touchscreen;
+            if( camera == "disabled")
+                ui->toolButton_cameraoff->setChecked(true);
+            else
+                ui->toolButton_cameraoff->setChecked(false);
 
 
 
