@@ -118,6 +118,13 @@ void qwikaccess::check_status()
         ui->micmute->setText(micvolume);
     }
 
+    // brightness level
+    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-brightness.sh");
+    proc.waitForFinished();
+
+   QString bright=proc.readAllStandardOutput();
+   bright = bright.trimmed();
+   ui->brightness->setText(bright);
 
     //wifi status
 
