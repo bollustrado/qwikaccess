@@ -444,7 +444,7 @@
              </widget>
             </item>
             <item row="4" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton">
+             <widget class="QToolButton" name="toolButton_keyboardoff">
               <property name="toolTip">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;laptop Keyboard on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
@@ -475,7 +475,7 @@
              </widget>
             </item>
             <item row="5" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="keyboardoff">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>

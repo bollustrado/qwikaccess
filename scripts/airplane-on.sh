@@ -1,13 +1,10 @@
 #!/bin/bash
-if [ "`which connmanctl`" ]; then
+if [ $(connmanctl state | awk '/OfflineMode/ { print $NF }') == "False" ]; then
 $(connmanctl enable offline) &&
 notify-send -i "airplane-mode" 'Airplane Mode' 'turned on via connmanctl'
-else
-$(rfkill block all)&&
-notify-send -i "airplane-mode" 'Airplane Mode' 'turned on via rfkill'
 fi
 
-if [ "`which nmcli`" ]; then
+if [ $(nmcli networking) == "enabled" ]; then
 $(nmcli networking off) &&
 notify-send -i "airplane-mode" 'Airplane Mode' 'turned on via nmcli'
 fi

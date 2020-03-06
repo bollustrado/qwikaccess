@@ -137,7 +137,7 @@ private slots:
 
     void on_toolButton_rotateinvert_clicked();
 
-    void on_toolButton_clicked(bool checked);
+    void on_toolButton_keyboardoff_clicked(bool checked);
 
 private:
     Ui::qwikaccess *ui;

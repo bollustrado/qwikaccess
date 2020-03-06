@@ -71,7 +71,7 @@ void qwikaccess::check_status()
 
     //wifi status
 
-            proc.start("nmcli", QStringList()<< "radio" << "wifi");
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-wifi.sh");
             proc.waitForFinished();
 
            QString wifi=proc.readAllStandardOutput();
@@ -90,19 +90,19 @@ void qwikaccess::check_status()
            QString bt=proc.readAllStandardOutput();
            bt = bt.trimmed();
             //qDebug()<< bt;
-            if( bt == "yes")
+            if( bt == "enabled")
                 ui->toolButton_bluetooth->setChecked(true);
             else
                 ui->toolButton_bluetooth->setChecked(false);
 
             //airplanemode status
 
-            proc.start("nmcli", QStringList()<< "networking");
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-airplane.sh");
             proc.waitForFinished();
 
            QString airp=proc.readAllStandardOutput();
            airp = airp.trimmed();
-            if( airp == "disabled")
+            if( airp == "enabled")
                 ui->toolButton_airplanemode->setChecked(true);
             else
                 ui->toolButton_airplanemode->setChecked(false);
@@ -187,6 +187,43 @@ void qwikaccess::check_status()
                 ui->toolButton_rotateinvert->setChecked(true);
             else
                 ui->toolButton_rotateinvert->setChecked(false);
+
+            // keyboard off status
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-keyboard.sh");
+            proc.waitForFinished();
+
+           QString keyboard=proc.readAllStandardOutput();
+           keyboard = keyboard.trimmed();
+            //qDebug()<< keyboard;
+            if( keyboard == "disabled")
+                ui->toolButton_keyboardoff->setChecked(true);
+            else
+                ui->toolButton_keyboardoff->setChecked(false);
+
+            // touchpad off status
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-touchpad.sh");
+            proc.waitForFinished();
+
+           QString touchpad=proc.readAllStandardOutput();
+           touchpad = touchpad.trimmed();
+            //qDebug()<< touchpad;
+            if( touchpad == "disabled")
+                ui->toolButton_touchpadoff->setChecked(true);
+            else
+                ui->toolButton_touchpadoff->setChecked(false);
+
+            // touchscreen off status
+            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-touchscreen.sh");
+            proc.waitForFinished();
+
+           QString touchscreen=proc.readAllStandardOutput();
+           touchscreen = touchscreen.trimmed();
+            //qDebug()<< touchscreen;
+            if( touchscreen == "disabled")
+                ui->toolButton_touchscreenoff->setChecked(true);
+            else
+                ui->toolButton_touchscreenoff->setChecked(false);
+
 
 
 }
@@ -792,7 +829,7 @@ void qwikaccess::on_toolButton_rotateinvert_clicked()
             proc.waitForFinished(400);
 }
 
-void qwikaccess::on_toolButton_clicked(bool checked)
+void qwikaccess::on_toolButton_keyboardoff_clicked(bool checked)
 {
     if(checked) //on
     {
