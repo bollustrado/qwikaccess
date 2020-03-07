@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QPixmap>
 #include <QTime>
+#include <QScroller>
 
 qwikaccess::qwikaccess(QWidget *parent) 
     : QMainWindow(parent)
@@ -13,6 +14,13 @@ qwikaccess::qwikaccess(QWidget *parent)
 {
     ui->setupUi(this);
     init();
+    QScrollArea *scrollArea = new QScrollArea(this);
+    // hide scrollbars
+            scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            // configure gesture and add rubberband effect
+            QScroller::grabGesture(scrollArea, QScroller::LeftMouseButtonGesture);
+
 }
 
 qwikaccess::~qwikaccess()
@@ -72,7 +80,6 @@ void qwikaccess::get_playing_media()
     else
         ui->toolButton_stop->setChecked(false);
 }
-
 void qwikaccess::check_status()
 {
 
