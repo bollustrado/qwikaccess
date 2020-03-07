@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>642</width>
-    <height>719</height>
+    <width>383</width>
+    <height>706</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="font">
    <font>
@@ -22,6 +28,12 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QScrollArea" name="scrollArea">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -30,13 +42,472 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>622</width>
-         <height>1120</height>
+         <width>363</width>
+         <height>1149</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="2" column="0">
+        <item row="13" column="0">
+         <widget class="QTabWidget" name="tabWidget_leave">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_leave">
+           <attribute name="title">
+            <string>Leave</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_lockscreen">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="lock">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_poweroff">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-shutdown">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_reboot">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-reboot">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="lockscreen">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Lock Screen</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="poweroff">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>PowerOff</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="reboot">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Reboot</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_logout">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-log-out">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_hibernate">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend-hibernate">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_suspend">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="logout">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Log Out</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="hibernate">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Hibernate</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="suspend">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Suspend</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_hybridsleep">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;suspends the system both to RAM and disk, so a complete power loss does not result in lost data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_suspenthenhibernate">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;initially suspends the system to RAM and if it is not interrupted then the system will be woken using an RTC alarm and hibernated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend-hibernate">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_rebbotuefi">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;system's firmware UEFI setup utility to show at next boot&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-reboot">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="hybridsleep">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Hybrid Sleep</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="suspendthenhibernate">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Suspend
+Then
+Hibernate</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="rebootuefi">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Reboot
+To UEFI</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTabWidget" name="tabWidget_control">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="tabletTracking">
+           <bool>false</bool>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="elideMode">
+           <enum>Qt::ElideNone</enum>
+          </property>
+          <widget class="QWidget" name="tab_control">
+           <attribute name="title">
+            <string>Control</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="2" column="3" alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="pushButton_micvolup">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>vol+</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3" alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="pushButton_audiovolup">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>vol+</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3" alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="pushButton_brightup">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>bright+</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="pushButton_audiovoldown">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>vol-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="pushButton_micvoldown">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>vol-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="audiomute">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Audio</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_micmute">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to mute mic&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="mic-on">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="micmute">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_audiomute">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to mute audio&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="audio-on">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_brightness">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;clicking will change brighness to dim(50%) and full(100%)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="contrast">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="pushButton_brightdown">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>bright-</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="brightness">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Bright</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="4" column="0">
          <widget class="QTabWidget" name="tabWidget_onoff">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="currentIndex">
            <number>0</number>
           </property>
@@ -44,82 +515,20 @@
            <attribute name="title">
             <string>On-Off</string>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout">
-            <item row="5" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="touchscreenoff">
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="3" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="gps">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>Touchscreen off</string>
+               <string>Gps</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="airplanemode">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Airplane Mode</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="flashlight">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Flashlight</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_wifi">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wifi on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset theme="network-wireless">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_batterysaver">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to enable powersave mode&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="battery">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" alignment="Qt::AlignHCenter">
+            <item row="4" column="0" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_quickhotspot">
               <property name="toolTip">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SSID: QuickHotspot&lt;/p&gt;&lt;p&gt;Password: pass123456789&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -136,119 +545,7 @@
               </property>
              </widget>
             </item>
-            <item row="3" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="gps">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Gps</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_touchscreenoff">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;touchscreen on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="input-tablet">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="touchpadoff">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Touchpad off</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="kbdbacklight">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Kbd-backlight</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="bluetooth">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Bluetooth</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_performacemode">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to enable performance mode&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="battery-full-charging">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="nightmode">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Night Mode</string>
-              </property>
-             </widget>
-            </item>
             <item row="5" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="cameroff">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Camera off</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="hotspot">
               <property name="font">
                <font>
@@ -262,7 +559,7 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="3" alignment="Qt::AlignHCenter">
+            <item row="4" column="1" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_airplanemode">
               <property name="toolTip">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Airplane on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -276,71 +573,6 @@
               </property>
               <property name="checkable">
                <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="wifi">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Wifi</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_bluetooth">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bluetooth on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset theme="network-bluetooth">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_nightmode">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;redshift on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="redeyes">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="performancemode">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Performance</string>
               </property>
              </widget>
             </item>
@@ -361,50 +593,30 @@
               </property>
              </widget>
             </item>
-            <item row="4" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_cameraoff">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;camera on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <item row="3" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="performancemode">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
               </property>
               <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="camera-off">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
+               <string>Performance</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_flashlight">
+            <item row="2" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_batterysaver">
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;flashlight on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to enable powersave mode&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="flashlight-on">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_kbdbacklight">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;keyboard backlight on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="input-keyboard-virtual-on">
+               <iconset theme="battery">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
@@ -426,16 +638,27 @@
               </property>
              </widget>
             </item>
-            <item row="4" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_touchpadoff">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;touchpad on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <item row="1" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="nightmode">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
               </property>
+              <property name="text">
+               <string>Night Mode</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_autorotate">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="input-touchpad">
+               <iconset theme="image-rotate-symbolic">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
@@ -443,7 +666,139 @@
               </property>
              </widget>
             </item>
-            <item row="4" column="3" alignment="Qt::AlignHCenter">
+            <item row="1" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="wifi">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Wifi</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="autorotate">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>AutoRotate</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="bluetooth">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Bluetooth</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_wifi">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;wifi on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset theme="network-wireless">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_nightmode">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;redshift on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="redeyes">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_performacemode">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to enable performance mode&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="battery-full-charging">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="airplanemode">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Airplane Mode</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_bluetooth">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bluetooth on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset theme="network-bluetooth">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_extra">
+           <attribute name="title">
+            <string>Extra</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="0" column="2" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_keyboardoff">
               <property name="toolTip">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;laptop Keyboard on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -460,7 +815,151 @@
               </property>
              </widget>
             </item>
-            <item row="4" column="4" alignment="Qt::AlignHCenter">
+            <item row="1" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="keyboardoff">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Keyboard-off</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_touchscreenoff">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;touchscreen on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="input-tablet">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_kbdbacklight">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;keyboard backlight on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="input-keyboard-virtual-on">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="cameroff">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Camera off</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_flashlight">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;flashlight on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="flashlight-on">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_touchpadoff">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;touchpad on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="input-touchpad">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="touchpadoff">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Touchpad off</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="flashlight">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Flashlight</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="kbdbacklight">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Kbd-backlight</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="touchscreenoff">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Touchscreen off</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_displayoff">
               <property name="toolTip">
                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to turn off display&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -474,19 +973,24 @@
               </property>
              </widget>
             </item>
-            <item row="5" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="keyboardoff">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
+            <item row="2" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_cameraoff">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;camera on/off&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
-               <string>Keyboard-off</string>
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="camera-off">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
-            <item row="5" column="4" alignment="Qt::AlignHCenter">
+            <item row="5" column="0" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="displayoff">
               <property name="font">
                <font>
@@ -500,34 +1004,18 @@
             </item>
            </layout>
           </widget>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QTabWidget" name="tabWidget_playerctl">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab_2">
+          <widget class="QWidget" name="tab">
            <attribute name="title">
-            <string>Playerctl</string>
+            <string>Rotate</string>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_8">
-            <item row="0" column="0" colspan="5">
-             <widget class="QLabel" name="title">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="0" column="0">
+             <widget class="QToolButton" name="toolButton_rotatenormal">
               <property name="text">
-               <string>Currently no  song playing</string>
+               <string>...</string>
               </property>
-             </widget>
-            </item>
-            <item row="1" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_shuffle">
               <property name="icon">
-               <iconset theme="media-playlist-shuffle">
+               <iconset theme="transform-rotate">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
@@ -535,24 +1023,13 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_prev">
+            <item row="0" column="1">
+             <widget class="QToolButton" name="toolButton_rotateleft">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="media-skip-backward">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_play">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="media-playback-start">
+               <iconset theme="object-rotate-left">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
@@ -560,13 +1037,37 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_pause">
+            <item row="1" column="0">
+             <widget class="QLabel" name="normal">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Normal</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="left">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Left</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QToolButton" name="toolButton_rotateright">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="media-playback-pause">
+               <iconset theme="object-rotate-right">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
@@ -574,149 +1075,52 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_next">
+            <item row="2" column="1">
+             <widget class="QToolButton" name="toolButton_rotateinvert">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="media-skip-forward">
+               <iconset theme="transform-rotate">
                 <normaloff>.</normaloff>.</iconset>
               </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
              </widget>
             </item>
-            <item row="2" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="stop">
+            <item row="3" column="0">
+             <widget class="QLabel" name="right">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>Shuffle</string>
+               <string>Right</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="prev">
+            <item row="3" column="1">
+             <widget class="QLabel" name="invert">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>Prev</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="play">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Play</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="pause">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Pause</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="next">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Next</string>
+               <string>Invert</string>
               </property>
              </widget>
             </item>
            </layout>
           </widget>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QTabWidget" name="tabWidget_oneclick">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab_oneclick">
+          <widget class="QWidget" name="tab_3">
            <attribute name="title">
-            <string>One Click</string>
+            <string>One click</string>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_5">
-            <item row="1" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_restartkeyboard">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;remove and insert modules&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>restart keyboard</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_clearcache">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to clear browser thumbnail cache&lt;/p&gt;&lt;p&gt;and journalctl logs older than 3 days&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>clear cache</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_restartbt">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;remove and insert modules&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>restart bluetooth</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_autohidpi">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>AutoHiDpi</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" alignment="Qt::AlignHCenter">
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="0" column="0">
              <widget class="QPushButton" name="pushButton_clearcmos">
               <property name="font">
                <font>
@@ -731,52 +1135,7 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_restartwifi">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;remove and insert modules&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>restart wifi</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_restartusb">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;remove and insert modules&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>restart usb</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_restarttouchpad">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;remove and insert modules&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>restart touchpad</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" alignment="Qt::AlignHCenter">
+            <item row="0" column="1">
              <widget class="QPushButton" name="pushButton_clearram">
               <property name="minimumSize">
                <size>
@@ -797,7 +1156,34 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="4" alignment="Qt::AlignHCenter">
+            <item row="0" column="2">
+             <widget class="QPushButton" name="pushButton_clearcache">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to clear browser thumbnail cache&lt;/p&gt;&lt;p&gt;and journalctl logs older than 3 days&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>clear cache</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="pushButton_autohidpi">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>AutoHiDpi</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
              <widget class="QPushButton" name="pushButton_rmautohidpi">
               <property name="font">
                <font>
@@ -813,8 +1199,14 @@
           </widget>
          </widget>
         </item>
-        <item row="5" column="0">
+        <item row="7" column="0">
          <widget class="QTabWidget" name="tabWidget_media">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="currentIndex">
            <number>0</number>
           </property>
@@ -822,120 +1214,8 @@
            <attribute name="title">
             <string>Media</string>
            </attribute>
-           <layout class="QGridLayout" name="gridLayout_3">
-            <item row="6" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="screenshot">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Screenshot</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_screenshot">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="edit-cut">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="screenrecorder">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Screen Recorder</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_screencam">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="camera-web">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_screenrecorder">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="camera-video">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_audiorecorder">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="microphone-sensitivity-high">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_camera">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="camera-photo">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="audiorecorder">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Audio Recorder</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0" alignment="Qt::AlignHCenter">
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="1" column="0" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="camera">
               <property name="font">
                <font>
@@ -949,7 +1229,7 @@
               </property>
              </widget>
             </item>
-            <item row="6" column="4" alignment="Qt::AlignHCenter">
+            <item row="4" column="1" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="screencam">
               <property name="font">
                <font>
@@ -959,31 +1239,74 @@
                </font>
               </property>
               <property name="text">
-               <string>Screencam Recorder</string>
+               <string>Screencam
+Recorder</string>
               </property>
              </widget>
             </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-        <item row="11" column="0">
-         <widget class="QTabWidget" name="tabWidget_leave">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab_leave">
-           <attribute name="title">
-            <string>Leave</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_6">
-            <item row="0" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_lockscreen">
+            <item row="4" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="audiorecorder">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Audio Recorder</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_screencam">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="lock">
+               <iconset theme="camera-web">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_audiorecorder">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="microphone-sensitivity-high">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="screenrecorder">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Screen Recorder</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_screenshot">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="edit-cut">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
@@ -991,33 +1314,22 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_logout">
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_camera">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="system-log-out">
+               <iconset theme="camera-photo">
                 <normaloff>.</normaloff>.</iconset>
               </property>
-             </widget>
-            </item>
-            <item row="1" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="lockscreen">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Lock Screen</string>
+              <property name="checkable">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
             <item row="1" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="logout">
+             <widget class="QLabel" name="screenshot">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -1026,498 +1338,200 @@
                </font>
               </property>
               <property name="text">
-               <string>Log Out</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_hybridsleep">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;suspends the system both to RAM and disk, so a complete power loss does not result in lost data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-suspend">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="hybridsleep">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Hybrid Sleep</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="suspendthenhibernate">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Suspend-then-Hibernate</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_suspenthenhibernate">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;initially suspends the system to RAM and if it is not interrupted then the system will be woken using an RTC alarm and hibernated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-suspend-hibernate">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_poweroff">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-shutdown">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="poweroff">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>PowerOff</string>
+               <string>Screenshot</string>
               </property>
              </widget>
             </item>
             <item row="3" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="suspend">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
+             <widget class="QToolButton" name="toolButton_screenrecorder">
               <property name="text">
-               <string>Suspend</string>
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="camera-video">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QTabWidget" name="tabWidget_playerctl">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>Playerctl</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="1" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_stop">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="media-playback-stop">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_play">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="media-playback-start">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_pause">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="media-playback-pause">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
             <item row="2" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_suspend">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-suspend">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_reboot">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-reboot">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="reboot">
+             <widget class="QLabel" name="label">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>Reboot</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_rebbotuefi">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;system's firmware UEFI setup utility to show at next boot&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-reboot">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="rebootuefi">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Reboot to UEFI</string>
+               <string>Stop</string>
               </property>
              </widget>
             </item>
             <item row="2" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_hibernate">
+             <widget class="QLabel" name="play">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Play</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="pause">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Pause</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_prev">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="system-suspend-hibernate">
+               <iconset theme="media-skip-backward">
                 <normaloff>.</normaloff>.</iconset>
               </property>
              </widget>
             </item>
             <item row="3" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="hibernate">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Hibernet</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QTabWidget" name="tabWidget_control">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab_control">
-           <attribute name="title">
-            <string>Control</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_4">
-            <item row="3" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="micmute">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Mic</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_micmute">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to mute mic&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
+             <widget class="QToolButton" name="toolButton_shuffle">
               <property name="icon">
-               <iconset theme="mic-on">
+               <iconset theme="media-playlist-shuffle">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
                <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="5" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_micvolup">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>vol+</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_audiovolup">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>vol+</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="3" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_audiovoldown">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>vol-</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_audiomute">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to mute audio&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="audio-on">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="6" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="brightness">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Brightness</string>
               </property>
              </widget>
             </item>
             <item row="3" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="audiomute">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Audio</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="5" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_micvoldown">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>vol-</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="6" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_brightness">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;clicking will change brighness to dim(50%) and full(100%)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
+             <widget class="QToolButton" name="toolButton_next">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="contrast">
+               <iconset theme="media-skip-forward">
                 <normaloff>.</normaloff>.</iconset>
               </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
              </widget>
             </item>
-            <item row="2" column="7" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_brightup">
+            <item row="4" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="prev">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>bright+</string>
+               <string>Prev</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="7" alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="pushButton_brightdown">
+            <item row="4" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="stop">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>bright-</string>
+               <string>Shuffle</string>
               </property>
              </widget>
             </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QTabWidget" name="tabwidget_rotation">
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab">
-           <attribute name="title">
-            <string>Rotation</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_7">
-            <item row="1" column="6" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="invert">
+            <item row="4" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="next">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>Invert</string>
+               <string>Next</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="5" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_rotateright">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="object-rotate-right">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="autorotate">
+            <item row="0" column="0" colspan="3">
+             <widget class="QLabel" name="title">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>AutoRotate</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="left">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Left</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_rotateleft">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="object-rotate-left">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="5" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="right">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Right</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_autorotate">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="image-rotate-symbolic">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="6" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_rotateinvert">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="transform-rotate">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_rotatenormal">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="transform-rotate">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="normal">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Normal</string>
+               <string>title</string>
               </property>
              </widget>
             </item>

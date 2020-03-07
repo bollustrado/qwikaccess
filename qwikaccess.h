@@ -55,16 +55,6 @@ private slots:
 
     void on_pushButton_rmautohidpi_clicked();
 
-    void on_pushButton_restartwifi_clicked();
-
-    void on_pushButton_restartbt_clicked();
-
-    void on_pushButton_restartusb_clicked();
-
-    void on_pushButton_restartkeyboard_clicked();
-
-    void on_pushButton_restarttouchpad_clicked();
-
     void on_toolButton_wifi_clicked(bool checked);
 
     void on_toolButton_quickhotspot_clicked(bool checked);
@@ -138,6 +128,8 @@ private slots:
     void on_toolButton_rotateinvert_clicked();
 
     void on_toolButton_keyboardoff_clicked(bool checked);
+
+    void on_toolButton_stop_clicked();
 
 private:
     Ui::qwikaccess *ui;

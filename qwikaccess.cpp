@@ -61,7 +61,10 @@ void qwikaccess::get_playing_media()
         ui->toolButton_pause->setChecked(true);
     else
         ui->toolButton_pause->setChecked(false);
-
+    if( s == "Stopped\n")
+        ui->toolButton_stop->setChecked(true);
+    else
+        ui->toolButton_stop->setChecked(false);
 }
 
 void qwikaccess::check_status()
@@ -508,41 +511,6 @@ void qwikaccess::on_pushButton_rmautohidpi_clicked()
                     proc.waitForFinished(400);
 }
 
-void qwikaccess::on_pushButton_restartwifi_clicked()
-{
-    QProcess proc;
-            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-wifi.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_restartbt_clicked()
-{
-    QProcess proc;
-            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-bt.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_restartusb_clicked()
-{
-    QProcess proc;
-            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-usb.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_restartkeyboard_clicked()
-{
-    QProcess proc;
-            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-keyboard.sh");
-            proc.waitForFinished(400);
-}
-
-void qwikaccess::on_pushButton_restarttouchpad_clicked()
-{
-    QProcess proc;
-            proc.startDetached("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-touchpad.sh");
-            proc.waitForFinished(400);
-}
-
 void qwikaccess::on_toolButton_wifi_clicked(bool checked)
 {
     if(checked) //on
@@ -922,4 +890,10 @@ void qwikaccess::on_toolButton_keyboardoff_clicked(bool checked)
                 proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/keyboard-on.sh");
                 proc.waitForFinished(400);
     }
+}
+
+void qwikaccess::on_toolButton_stop_clicked()
+{
+    QProcess proc;
+    proc.startDetached("playerctl", QStringList()<< "stop");
 }
