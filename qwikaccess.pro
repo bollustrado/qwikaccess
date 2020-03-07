@@ -38,10 +38,10 @@ unix {
 
         icons.path  = /usr/share/icons/hicolor/scalable/apps/
         icons.files = qwikaccess.svg
-
+	
         scripts.files = scripts
-
         scripts.path  = $$SCRIPTS_PATH
+
         INSTALLS += target icons desktop scripts
 }
 

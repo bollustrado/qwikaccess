@@ -14,6 +14,9 @@
 
 # Kill any existing monitor-sensor instance, for example if manually invoking
 # from a terminal for testing.
+gsettings set org.gnome.settings-daemon.peripherals.touchscreen orientation-lock false
+gsettings set org.gnome.settings-daemon.plugins.orientation active true
+if [ $XDG_SESSION_TYPE == "x11" ]; then
 killall monitor-sensor
 
 # Launch monitor-sensor and store the output in a RAM based file that can be checked by the rest of the script.
@@ -66,5 +69,5 @@ xinput set-prop $touchscreenid  "Device Enabled" 1
 xinput set-prop $touchscreenid 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1;;
 esac
 done
-
+fi
 # On stopping this script, don't forget that "monitor-sensor" is still running - hence the "killall" 
