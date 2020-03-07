@@ -34,7 +34,8 @@ else
     CurrBright=".${MathBright:0:2}"
 fi
 
-xrandr --output "$MON" --brightness "$CurrBright"  && # Set new brightness
+xrandr --output "$MON" --brightness "$CurrBright" 
+# && # Set new brightness
 
 # Display current brightness
 #printf "Monitor $MON "
