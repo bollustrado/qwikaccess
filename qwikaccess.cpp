@@ -5,14 +5,14 @@
 #include <QDebug>
 #include <QPixmap>
 #include <QTime>
+
 qwikaccess::qwikaccess(QWidget *parent) 
     : QMainWindow(parent)
     , ui(new Ui::qwikaccess),
-    timer(new QTimer(this))
+    timer(new QBasicTimer)
 {
     ui->setupUi(this);
     init();
-
 }
 
 qwikaccess::~qwikaccess()
@@ -20,20 +20,26 @@ qwikaccess::~qwikaccess()
     delete ui;
 }
 
+void qwikaccess::timerEvent(QTimerEvent *tEvent)
+{
+    if (tEvent->timerId() == timer->timerId()) {
+        get_playing_media();
+        check_status();
+    }
+}
+
 void qwikaccess::init()
 {
     // connections
-    connect(timer, &QTimer::timeout, this, &qwikaccess::get_playing_media);
-    connect(timer, &QTimer::timeout, this, &qwikaccess::check_status);
+//    connect(timer, &QTimer::timeout, this, &qwikaccess::get_playing_media);
+//    connect(timer, &QTimer::timeout, this, &qwikaccess::check_status);
 
     // 1 second timer
-    timer->start(1000);
+    timer->start(1000, this);
 
     // initialization
     get_playing_media();
     check_status();
-
-
 }
 
 void delay()

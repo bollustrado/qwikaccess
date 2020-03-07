@@ -2,6 +2,7 @@
 #define QWIKACCESS_H
 
 #include <QMainWindow>
+#include <QBasicTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class qwikaccess; }
@@ -14,6 +15,9 @@ class qwikaccess : public QMainWindow
 public:
     qwikaccess(QWidget *parent = nullptr);
     ~qwikaccess();
+
+protected:
+    void timerEvent(QTimerEvent *tEvent);
 
 private slots:
 
@@ -133,6 +137,7 @@ private slots:
 
 private:
     Ui::qwikaccess *ui;
-    QTimer *timer;
+//    QTimer *timer;
+    QBasicTimer *timer;
 };
 #endif // QWIKACCESS_H
