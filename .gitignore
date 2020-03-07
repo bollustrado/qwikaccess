@@ -1,0 +1,14 @@
+lib*.so*
+.qmake.stash
+Makefile*
+*.pro.user
+update
+*.cc
+*.hh
+build
+corefm
+corefm.wrapper
+corefm-local.pro
+TODO
+v2*
+debian
