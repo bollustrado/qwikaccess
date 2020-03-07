@@ -14,12 +14,12 @@ qwikaccess::qwikaccess(QWidget *parent)
 {
     ui->setupUi(this);
     init();
-    QScrollArea *scrollArea = new QScrollArea(this);
+    //QScrollArea *scrollArea = new QScrollArea(this);
     // hide scrollbars
-            scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-            scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
             // configure gesture and add rubberband effect
-            QScroller::grabGesture(scrollArea, QScroller::LeftMouseButtonGesture);
+            QScroller::grabGesture(ui->scrollArea, QScroller::LeftMouseButtonGesture);
 
 }
 
