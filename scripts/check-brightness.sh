@@ -4,6 +4,6 @@ wvalue=$(brightnessctl | grep Current | awk '/Current brightness/ { print $NF }'
 xvalue=$(bc <<< "scale = 0; ($bright * 100)/1")
 if [ $XDG_SESSION_TYPE == "x11" ]; then
 echo "$xvalue%"
-elif
+else
 echo "$wvalue%"
 fi
