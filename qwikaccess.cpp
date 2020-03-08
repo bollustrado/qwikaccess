@@ -61,13 +61,13 @@ void qwikaccess::get_playing_media()
 {
     QProcess proc;
     // playerctl
-    proc.start("playerctl", QStringList() << "metadata" << "title");
+    proc.start("/bin/sh", QStringList() <<"/home/sk/qwikaccess/scripts/playerctl-metadata.sh");
      proc.waitForFinished();
     QString t=proc.readAllStandardOutput();
     proc.start("playerctl", QStringList() << "status");
      proc.waitForFinished();
     QString s=proc.readAllStandardOutput();
-    ui->title->setText(s + t);
+    ui->title->setText(t);
     if( s == "Playing\n")
         ui->toolButton_play->setChecked(true);
     else

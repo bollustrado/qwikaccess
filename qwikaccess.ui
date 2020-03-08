@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>380</width>
-    <height>705</height>
+    <height>730</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -23,6 +23,9 @@
   </property>
   <property name="windowTitle">
    <string>qwikaccess</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="qwikaccess"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -47,7 +50,7 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-161</y>
+         <y>0</y>
          <width>360</width>
          <height>978</height>
         </rect>
@@ -246,7 +249,37 @@ Recorder</string>
             <string>Playerctl</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout">
-            <item row="9" column="0" alignment="Qt::AlignHCenter">
+            <item row="9" column="0" colspan="3" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="title">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="text">
+               <string>title</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="prev">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Prev</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="label">
               <property name="font">
                <font>
@@ -258,7 +291,7 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="8" column="0" alignment="Qt::AlignHCenter">
+            <item row="10" column="0" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_stop">
               <property name="text">
                <string>...</string>
@@ -272,7 +305,7 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="10" column="0" alignment="Qt::AlignHCenter">
+            <item row="13" column="0" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_prev">
               <property name="text">
                <string>...</string>
@@ -283,19 +316,7 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="11" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="prev">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Prev</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="1" alignment="Qt::AlignHCenter">
+            <item row="10" column="1" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_play">
               <property name="text">
                <string>...</string>
@@ -309,19 +330,7 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="9" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="play">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Play</string>
-              </property>
-             </widget>
-            </item>
-            <item row="10" column="1" alignment="Qt::AlignHCenter">
+            <item row="13" column="1" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_shuffle">
               <property name="icon">
                <iconset theme="media-playlist-shuffle">
@@ -332,7 +341,7 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="11" column="1" alignment="Qt::AlignHCenter">
+            <item row="14" column="1" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="stop">
               <property name="font">
                <font>
@@ -344,60 +353,19 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="9" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="pause">
+            <item row="12" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="play">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>Pause</string>
+               <string>Play</string>
               </property>
              </widget>
             </item>
             <item row="10" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_next">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="media-skip-forward">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="11" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="next">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Next</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="albumart">
-              <property name="maximumSize">
-               <size>
-                <width>40</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>albumart</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="2">
              <widget class="QToolButton" name="toolButton_pause">
               <property name="text">
                <string>...</string>
@@ -411,15 +379,56 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="0" colspan="3">
-             <widget class="QLabel" name="title">
+            <item row="12" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="pause">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
               </property>
               <property name="text">
-               <string>title</string>
+               <string>Pause</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_next">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="media-skip-forward">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="next">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Next</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="albumart">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>albumart</string>
               </property>
              </widget>
             </item>
