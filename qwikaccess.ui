@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>380</width>
-    <height>704</height>
+    <height>705</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -49,7 +49,7 @@
          <x>0</x>
          <y>0</y>
          <width>360</width>
-         <height>1149</height>
+         <height>954</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -64,69 +64,18 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
+          <property name="usesScrollButtons">
+           <bool>false</bool>
+          </property>
+          <property name="tabBarAutoHide">
+           <bool>false</bool>
+          </property>
           <widget class="QWidget" name="tab_media">
            <attribute name="title">
             <string>Media</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_6">
-            <item row="1" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="camera">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Camera</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="screencam">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Screencam
-Recorder</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="audiorecorder">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Audio Recorder</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_screencam">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="camera-web">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2" alignment="Qt::AlignHCenter">
+            <item row="0" column="2" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_audiorecorder">
               <property name="text">
                <string>...</string>
@@ -140,21 +89,7 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="4" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="screenrecorder">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Screen Recorder</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" alignment="Qt::AlignHCenter">
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_screenshot">
               <property name="text">
                <string>...</string>
@@ -168,6 +103,69 @@ Recorder</string>
               </property>
              </widget>
             </item>
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_screenrecorder">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="camera-video">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="audiorecorder">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Audio Recorder</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="screenshot">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Screenshot</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="screenrecorder">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Screen Recorder</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_5">
+           <attribute name="title">
+            <string>Extra</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_10">
             <item row="0" column="0" alignment="Qt::AlignHCenter">
              <widget class="QToolButton" name="toolButton_camera">
               <property name="text">
@@ -182,27 +180,13 @@ Recorder</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="screenshot">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Screenshot</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_screenrecorder">
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_screencam">
               <property name="text">
                <string>...</string>
               </property>
               <property name="icon">
-               <iconset theme="camera-video">
+               <iconset theme="camera-web">
                 <normaloff>.</normaloff>.</iconset>
               </property>
               <property name="checkable">
@@ -210,64 +194,8 @@ Recorder</string>
               </property>
              </widget>
             </item>
-           </layout>
-          </widget>
-         </widget>
-        </item>
-        <item row="15" column="0">
-         <widget class="QTabWidget" name="tabWidget_leave">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab_leave">
-           <attribute name="title">
-            <string>Leave</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_8">
-            <item row="0" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_lockscreen">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="lock">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_poweroff">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-shutdown">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_reboot">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-reboot">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="lockscreen">
+             <widget class="QLabel" name="camera">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -276,69 +204,12 @@ Recorder</string>
                </font>
               </property>
               <property name="text">
-               <string>Lock Screen</string>
+               <string>Camera</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="poweroff">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>PowerOff</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="reboot">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Reboot</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_logout">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-log-out">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_hibernate">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-suspend-hibernate">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_suspend">
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-suspend">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="logout">
+             <widget class="QLabel" name="screencam">
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -347,112 +218,8 @@ Recorder</string>
                </font>
               </property>
               <property name="text">
-               <string>Log Out</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="hibernate">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Hibernate</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="suspend">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Suspend</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_hybridsleep">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;suspends the system both to RAM and disk, so a complete power loss does not result in lost data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-suspend">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_suspenthenhibernate">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;initially suspends the system to RAM and if it is not interrupted then the system will be woken using an RTC alarm and hibernated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-suspend-hibernate">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QToolButton" name="toolButton_rebbotuefi">
-              <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;system's firmware UEFI setup utility to show at next boot&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset theme="system-reboot">
-                <normaloff>.</normaloff>.</iconset>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="0" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="hybridsleep">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Hybrid Sleep</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="1" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="suspendthenhibernate">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Suspend
-Then
-Hibernate</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="2" alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="rebootuefi">
-              <property name="font">
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>Reboot
-To UEFI</string>
+               <string>Screencam
+Recorder</string>
               </property>
              </widget>
             </item>
@@ -470,6 +237,9 @@ To UEFI</string>
           </property>
           <property name="currentIndex">
            <number>0</number>
+          </property>
+          <property name="usesScrollButtons">
+           <bool>false</bool>
           </property>
           <widget class="QWidget" name="tab_2">
            <attribute name="title">
@@ -649,6 +419,9 @@ To UEFI</string>
           </property>
           <property name="currentIndex">
            <number>0</number>
+          </property>
+          <property name="usesScrollButtons">
+           <bool>false</bool>
           </property>
           <widget class="QWidget" name="tab_onoff">
            <attribute name="title">
@@ -1355,6 +1128,9 @@ To UEFI</string>
           <property name="elideMode">
            <enum>Qt::ElideNone</enum>
           </property>
+          <property name="usesScrollButtons">
+           <bool>false</bool>
+          </property>
           <widget class="QWidget" name="tab_control">
            <attribute name="title">
             <string>Control</string>
@@ -1538,6 +1314,269 @@ To UEFI</string>
               </property>
               <property name="text">
                <string>Bright</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="15" column="0">
+         <widget class="QTabWidget" name="tabWidget_leave">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="usesScrollButtons">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="tab_leave">
+           <attribute name="title">
+            <string>Leave</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_lockscreen">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="lock">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="5" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="reboot">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Reboot</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="lockscreen">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Lock Screen</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="suspend">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Sleep</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="5" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_reboot">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-reboot">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_suspend">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_poweroff">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-shutdown">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="poweroff">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>PowerOff</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_4">
+           <attribute name="title">
+            <string>Extra</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="3" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="logout">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Log Out</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="hibernate">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Hibernate</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_logout">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-log-out">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_hibernate">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend-hibernate">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_hybridsleep">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;suspends the system both to RAM and disk, so a complete power loss does not result in lost data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="hybridsleep">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Hybrid Sleep</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_6">
+           <attribute name="title">
+            <string>Extra2</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="4" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="rebootuefi">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Reboot
+To UEFI</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QLabel" name="suspendthenhibernate">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Suspend
+Then
+Hibernate</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_rebbotuefi">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;system's firmware UEFI setup utility to show at next boot&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-reboot">
+                <normaloff>.</normaloff>.</iconset>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2" alignment="Qt::AlignHCenter">
+             <widget class="QToolButton" name="toolButton_suspenthenhibernate">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;initially suspends the system to RAM and if it is not interrupted then the system will be woken using an RTC alarm and hibernated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset theme="system-suspend-hibernate">
+                <normaloff>.</normaloff>.</iconset>
               </property>
              </widget>
             </item>
