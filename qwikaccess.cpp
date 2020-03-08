@@ -60,6 +60,7 @@ void delay()
 void qwikaccess::get_playing_media()
 {
     QProcess proc;
+    // playerctl
     proc.start("playerctl", QStringList() << "metadata" << "title");
      proc.waitForFinished();
     QString t=proc.readAllStandardOutput();
@@ -79,11 +80,24 @@ void qwikaccess::get_playing_media()
         ui->toolButton_stop->setChecked(true);
     else
         ui->toolButton_stop->setChecked(false);
+    //get albumart
+    proc.start("/bin/sh", QStringList() << "/usr/share/qwikaccess/scripts/albumart.sh");
+         proc.waitForFinished();
+        QString album=proc.readAllStandardOutput();
+        album = album.trimmed();
+        //qDebug()<< album;
+
+    //QString url = R"(album)";
+    QPixmap img(album);
+    ui->albumart->setPixmap(img);
+
 }
 void qwikaccess::check_status()
 {
 
     QProcess proc;
+
+
     // audio volume level
     proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-audio-volume.sh");
     proc.waitForFinished();
