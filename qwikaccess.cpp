@@ -6,7 +6,7 @@
 #include <QPixmap>
 #include <QTime>
 #include <QScroller>
-
+#include <QAbstractItemView>
 qwikaccess::qwikaccess(QWidget *parent) 
     : QMainWindow(parent)
     , ui(new Ui::qwikaccess),
@@ -14,13 +14,13 @@ qwikaccess::qwikaccess(QWidget *parent)
 {
     ui->setupUi(this);
     init();
-    //QScrollArea *scrollArea = new QScrollArea(this);
+  //setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
+  //  setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
     // hide scrollbars
-            ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-            ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            //ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+            //ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
             // configure gesture and add rubberband effect
             QScroller::grabGesture(ui->scrollArea, QScroller::LeftMouseButtonGesture);
-
 }
 
 qwikaccess::~qwikaccess()

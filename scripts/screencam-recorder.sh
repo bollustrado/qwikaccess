@@ -3,6 +3,7 @@
 
 
 
+if [ $XDG_SESSION_TYPE == "x11" ]; then
 
 #####  set variables below ####
 
@@ -24,10 +25,13 @@ ffplay -window_title "$video_window_title" /dev/video0 &
 
 
 
-
 ####  Record everything on the screen  ####
 ffmpeg -y -f x11grab -s \
 $(xrandr | grep \* | cut -d' ' -f4) -framerate 30 \
 -i $DISPLAY -f pulse -ac 2 \
 -i default ~/Videos/$T ;
 notify-send -i "camera-video" 'qwikscreenrecorder' 'recording saved in ~/Videos'
+
+else
+notify-send -i "camera-video" 'qwikscreenrecorder' 'screencam works only in x11'
+fi
