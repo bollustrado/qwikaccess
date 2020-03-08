@@ -6,3 +6,5 @@ else
 wf-recorder -f ~/Videos/qwikscreenrecorder-$(date "+%Y-%m-%d-%H-%M-%S").mkv ;
 notify-send -i "camera-video" 'qwikscreenrecorder' 'recording saved in ~/Videos'
 fi
+
+

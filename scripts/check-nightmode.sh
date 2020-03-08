@@ -15,3 +15,11 @@ echo "enabled"
 fi
 
 
+
+if [ $GAMMAX = 1.0 ] | [ $GAMMAY = 1.0 ] | [ $GAMMAZ = 1.0 ]; then
+echo "disabled"
+elif [ $(gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled) == "false" ] ; then
+echo "disabled"
+elif [ $(cat ~/.config/kwinrc | grep -A1 NightColor | awk '/Active/ { print $NF }') == "Active=false"  ; then
+echo "disabled"
+fi
