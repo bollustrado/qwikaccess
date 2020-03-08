@@ -61,7 +61,7 @@ void qwikaccess::get_playing_media()
 {
     QProcess proc;
     // playerctl
-    proc.start("/bin/sh", QStringList() <<"/home/sk/qwikaccess/scripts/playerctl-metadata.sh");
+    proc.start("/bin/sh", QStringList() <<"/usr/share/qwikaccess/scripts/playerctl-metadata.sh");
      proc.waitForFinished();
     QString t=proc.readAllStandardOutput();
     proc.start("playerctl", QStringList() << "status");
