@@ -68,19 +68,37 @@ void qwikaccess::get_playing_media()
     proc.start("playerctl", QStringList() << "status");
      proc.waitForFinished();
     QString s=proc.readAllStandardOutput();
+    s = s.trimmed();
     ui->title->setText(t);
-    if( s == "Playing\n")
-        ui->toolButton_play->setChecked(true);
-    else
-        ui->toolButton_play->setChecked(false);
-    if( s == "Paused\n")
-        ui->toolButton_pause->setChecked(true);
-    else
-        ui->toolButton_pause->setChecked(false);
-    if( s == "Stopped\n")
-        ui->toolButton_stop->setChecked(true);
-    else
+    if( s == "Playing")
+    {
+        ui->playpause->setText("Pause");
+        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-pause"));
+        ui->toolButton_playpause->setChecked(true);
         ui->toolButton_stop->setChecked(false);
+    }
+
+    else if( s == "Paused")
+    {
+        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->toolButton_playpause->setChecked(true);
+        ui->playpause->setText("Play");
+        ui->toolButton_stop->setChecked(false);
+    }
+    else if( s == "Stopped")
+    {
+        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->toolButton_stop->setChecked(true);
+        ui->toolButton_playpause->setChecked(false);
+        ui->playpause->setText("Play");
+    }
+    else
+    {
+        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->toolButton_playpause->setChecked(false);
+        ui->toolButton_stop->setChecked(false);
+        ui->playpause->setText("Play");
+    }
     //get albumart
     proc.start("/bin/sh", QStringList() << "/usr/share/qwikaccess/scripts/albumart.sh");
          proc.waitForFinished();
@@ -903,16 +921,10 @@ void qwikaccess::on_toolButton_prev_clicked()
     proc.startDetached("playerctl", QStringList()<< "previous");
 }
 
-void qwikaccess::on_toolButton_play_clicked()
+void qwikaccess::on_toolButton_playpause_clicked()
 {
     QProcess proc;
-    proc.startDetached("playerctl", QStringList()<< "play");
-}
-
-void qwikaccess::on_toolButton_pause_clicked()
-{
-    QProcess proc;
-    proc.startDetached("playerctl", QStringList()<< "pause");
+    proc.startDetached("playerctl", QStringList()<< "play-pause");
 }
 
 void qwikaccess::on_toolButton_next_clicked()

@@ -113,9 +113,7 @@ private slots:
 
     void on_toolButton_prev_clicked();
 
-    void on_toolButton_play_clicked();
-
-    void on_toolButton_pause_clicked();
+    void on_toolButton_playpause_clicked();
 
     void on_toolButton_next_clicked();
 
