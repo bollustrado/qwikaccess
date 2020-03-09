@@ -14,7 +14,8 @@ qwikaccess::qwikaccess(QWidget *parent)
     timer(new QBasicTimer)
 {
     ui->setupUi(this);
-    init();
+    //init();
+    check_status();
   //setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
   //  setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
     // hide scrollbars
@@ -32,8 +33,8 @@ qwikaccess::~qwikaccess()
 void qwikaccess::timerEvent(QTimerEvent *tEvent)
 {
     if (tEvent->timerId() == timer->timerId()) {
-        get_playing_media();
-        check_status();
+        //get_playing_media();
+        //check_status();
     }
 }
 
@@ -47,8 +48,8 @@ void qwikaccess::init()
     timer->start(1000, this);
 
     // initialization
-    get_playing_media();
-    check_status();
+    //get_playing_media();
+    //check_status();
 }
 
 void delay()
