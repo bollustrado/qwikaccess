@@ -538,6 +538,18 @@
             </item>
             <item row="3" column="0" colspan="5" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="title">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>400</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
@@ -998,6 +1010,9 @@ To UEFI</string>
           </property>
           <property name="currentIndex">
            <number>0</number>
+          </property>
+          <property name="elideMode">
+           <enum>Qt::ElideNone</enum>
           </property>
           <property name="usesScrollButtons">
            <bool>false</bool>
