@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>412</width>
+    <width>410</width>
     <height>781</height>
    </rect>
   </property>
@@ -51,8 +51,8 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
-         <width>392</width>
+         <y>-152</y>
+         <width>390</width>
          <height>913</height>
         </rect>
        </property>
@@ -539,16 +539,10 @@
             <item row="3" column="0" colspan="5" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="title">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>400</width>
-                <height>16777215</height>
-               </size>
               </property>
               <property name="font">
                <font>
