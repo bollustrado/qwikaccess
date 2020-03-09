@@ -1,2 +1,5 @@
 #!/bin/bash
-pkill -u $USER
+
+loginctl terminate-user $USER
+
+#pkill -u $USER

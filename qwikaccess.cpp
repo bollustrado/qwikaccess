@@ -7,6 +7,7 @@
 #include <QTime>
 #include <QScroller>
 #include <QAbstractItemView>
+#include <QMessageBox>
 qwikaccess::qwikaccess(QWidget *parent) 
     : QMainWindow(parent)
     , ui(new Ui::qwikaccess),
@@ -738,48 +739,97 @@ void qwikaccess::on_toolButton_lockscreen_clicked()
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/lockscreen.sh");
             proc.waitForFinished();
+
 }
 
 void qwikaccess::on_toolButton_logout_clicked()
 {
+    QMessageBox msgBox;
+        msgBox.setWindowTitle("qwikaccess");
+        msgBox.setText("Do you want to Log Out?");
+        msgBox.setStandardButtons(QMessageBox::Yes);
+        msgBox.addButton(QMessageBox::No);
+        msgBox.setDefaultButton(QMessageBox::No);
+        if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/logout.sh");
             proc.waitForFinished();
+           }
 }
 
 void qwikaccess::on_toolButton_suspend_clicked()
 {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("qwikaccess");
+    msgBox.setText("Do you want to Suspend the Device?");
+    msgBox.setStandardButtons(QMessageBox::Yes);
+    msgBox.addButton(QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/suspend.sh");
             proc.waitForFinished();
+    }
 }
 
 void qwikaccess::on_toolButton_poweroff_clicked()
 {
+    QMessageBox msgBox;
+        msgBox.setWindowTitle("qwikaccess");
+        msgBox.setText("Do you want to Power Off The device?");
+        msgBox.setStandardButtons(QMessageBox::Yes);
+        msgBox.addButton(QMessageBox::No);
+        msgBox.setDefaultButton(QMessageBox::No);
+        if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/poweroff.sh");
             proc.waitForFinished();
+        }
 }
 
 void qwikaccess::on_toolButton_reboot_clicked()
 {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("qwikaccess");
+    msgBox.setText("Do you want to Reboot The device?");
+    msgBox.setStandardButtons(QMessageBox::Yes);
+    msgBox.addButton(QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/reboot.sh");
             proc.waitForFinished();
+    }
 }
 
 void qwikaccess::on_toolButton_hibernate_clicked()
 {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("qwikaccess");
+    msgBox.setText("Do you want to Hibernate The device?");
+    msgBox.setStandardButtons(QMessageBox::Yes);
+    msgBox.addButton(QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/hibernate.sh");
             proc.waitForFinished();
+    }
 }
 
 void qwikaccess::on_toolButton_rebbotuefi_clicked()
 {
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("qwikaccess");
+    msgBox.setText("Do you want to Reboot To UEFI?");
+    msgBox.setStandardButtons(QMessageBox::Yes);
+    msgBox.addButton(QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/reboot-to-uefi.sh");
             proc.waitForFinished();
+    }
 }
 
 void qwikaccess::on_toolButton_kbdbacklight_clicked(bool checked)
@@ -800,23 +850,51 @@ void qwikaccess::on_toolButton_kbdbacklight_clicked(bool checked)
 
 void qwikaccess::on_toolButton_hybridsleep_clicked()
 {
+    QMessageBox msgBox;
+        msgBox.setWindowTitle("qwikaccess");
+        msgBox.setText("Do you want to Hybrid Sleep The device?");
+        msgBox.setStandardButtons(QMessageBox::Yes);
+        msgBox.addButton(QMessageBox::No);
+        msgBox.setDefaultButton(QMessageBox::No);
+        if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/hybrid-sleep.sh");
             proc.waitForFinished();
+        }
 }
 
 void qwikaccess::on_toolButton_suspenthenhibernate_clicked()
 {
+    QMessageBox msgBox;
+        msgBox.setWindowTitle("qwikaccess");
+        msgBox.setText("Do you want to Suspend Then Hibernate The device?");
+        msgBox.setStandardButtons(QMessageBox::Yes);
+        msgBox.addButton(QMessageBox::No);
+        msgBox.setDefaultButton(QMessageBox::No);
+        if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
             proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/suspend-then-hibernate.sh");
             proc.waitForFinished();
+        }
 }
 
 void qwikaccess::on_toolButton_displayoff_clicked()
 {
-    QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-off.sh");
-            proc.waitForFinished();
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Qwikaccess");
+    msgBox.setText("Do you want to turn display off?");
+    msgBox.setStandardButtons(QMessageBox::Yes);
+    msgBox.addButton(QMessageBox::No);
+    msgBox.setDefaultButton(QMessageBox::No);
+    if(msgBox.exec() == QMessageBox::Yes){
+      // do something
+        QProcess proc;
+                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-off.sh");
+                proc.waitForFinished();
+    }//else {
+      // do something else
+    //}
+
 }
 
 void qwikaccess::on_toolButton_prev_clicked()
