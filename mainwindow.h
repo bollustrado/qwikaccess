@@ -104,15 +104,6 @@ private slots:
 
     void on_pushButton_restartusb_clicked();
 
-    void on_toolButton_shuffle_clicked(bool checked);
-
-    void on_toolButton_stop_clicked();
-
-    void on_toolButton_playpause_clicked();
-
-    void on_toolButton_prev_clicked();
-
-    void on_toolButton_next_clicked();
 
 private:
     Ui::MainWindow *ui;
