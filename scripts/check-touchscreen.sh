@@ -3,3 +3,4 @@ if [ $(xinput --list-props $(xinput --list | grep -i 'Touchscreen' | grep -o 'id
 echo "disabled"
 elif [ $(xinput --list-props $(xinput --list | grep -i 'Touchscreen' | grep -o 'id=[0-9]*' | sed 's/id=//') | grep 'Device Enabled' | awk '/Device Enabled/ { print $NF }') == "1" ] ; then
 echo "enabled"
+fi
