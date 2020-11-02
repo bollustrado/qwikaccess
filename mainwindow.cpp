@@ -3,97 +3,16 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow),
-    timer(new QBasicTimer)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    init();
     check_status_MainWindow();
-    QScroller::grabGesture(ui->scrollArea, QScroller::LeftMouseButtonGesture);
+    //QScroller::grabGesture(ui->scrollArea, QScroller::LeftMouseButtonGesture);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::timerEvent(QTimerEvent *tEvent)
-{
-    if (tEvent->timerId() == timer->timerId()) {
-        //get_playing_media();
-    }
-}
-
-void MainWindow::init()
-{
-    // connections
-    //connect(timer, &QTimer::timeout, this, &MainWindow::get_playing_media);
-    // 1 second timer
-    timer->start(1000, this);
-
-    // initialization
-    get_playing_media();
-}
-
-void delay()
-{
-    QTime dieTime= QTime::currentTime().addSecs(2);
-    while (QTime::currentTime() < dieTime)
-        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-}
-
-void MainWindow::get_playing_media()
-{
-    QProcess proct;
-    // playerctl
-    proct.start("/bin/sh", QStringList() <<"/usr/share/qwikaccess/scripts/playerctl-metadata.sh");
-     proct.waitForFinished();
-    QString t=proct.readAllStandardOutput();
-    proct.start("playerctl", QStringList() << "status");
-     proct.waitForFinished();
-    QString s=proct.readAllStandardOutput();
-    s = s.trimmed();
-    ui->title->setText(t);
-    if( s == "Playing")
-    {
-        ui->playpause->setText("Pause");
-        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-pause"));
-        ui->toolButton_playpause->setChecked(true);
-        ui->toolButton_stop->setChecked(false);
-    }
-
-    else if( s == "Paused")
-    {
-        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-start"));
-        ui->toolButton_playpause->setChecked(true);
-        ui->playpause->setText("Play");
-        ui->toolButton_stop->setChecked(false);
-    }
-    else if( s == "Stopped")
-    {
-        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-start"));
-        ui->toolButton_stop->setChecked(true);
-        ui->toolButton_playpause->setChecked(false);
-        ui->playpause->setText("Play");
-    }
-    else
-    {
-        ui->toolButton_playpause->setIcon(QIcon::fromTheme("media-playback-start"));
-        ui->toolButton_playpause->setChecked(false);
-        ui->toolButton_stop->setChecked(false);
-        ui->playpause->setText("Play");
-    }
-    //get albumart
-    proct.start("/bin/sh", QStringList() << "/usr/share/qwikaccess/scripts/albumart.sh");
-         proct.waitForFinished();
-        QString album=proct.readAllStandardOutput();
-        album = album.trimmed();
-        //qDebug()<< album;
-
-    //QString url = R"(album)";
-    QPixmap img(album);
-    ui->albumart->setPixmap(img);
-
 }
 
 void MainWindow::check_status_MainWindow()

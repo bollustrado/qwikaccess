@@ -1,2 +1,2 @@
 #!/bin/bash
-playerctl metadata --format '{{ status }}:-{{ title }} {{ duration(position) }}' #|{{ duration(mpris:length) }}' #--follow 
+playerctl metadata --format '{{ title }} \n{{ status }}:- {{ duration(position) }}' #|{{ duration(mpris:length) }}' #--follow 

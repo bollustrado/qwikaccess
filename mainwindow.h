@@ -4,9 +4,6 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QProcess>
-#include <QBasicTimer>
-#include <QTimer>
-#include <QTime>
 #include <QScroller>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,15 +17,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected:
-    void timerEvent(QTimerEvent *tEvent);    
-    
 private slots:
     void check_status_MainWindow();
-
-    void get_playing_media();
-
-    void init();
 
     void on_toolButton_nightmode_clicked(bool checked);
 
@@ -126,7 +116,5 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    //    QTimer *timer;
-    QBasicTimer *timer;
 };
 #endif // MAINWINDOW_H
