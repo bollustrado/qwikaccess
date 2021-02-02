@@ -21,14 +21,14 @@ void MainWindow::check_status_MainWindow()
     QProcess proc;
 
     // audio volume level
-    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-audio-volume.sh");
+    proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-audio-volume.sh");
     proc.waitForFinished();
 
    QString audiovolume=proc.readAllStandardOutput();
    audiovolume = audiovolume.trimmed();
 
     //audio mute status
-    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-audio-mute.sh");
+    proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-audio-mute.sh");
     proc.waitForFinished();
 
    QString audiomute=proc.readAllStandardOutput();
@@ -46,14 +46,14 @@ void MainWindow::check_status_MainWindow()
     }
 
     // mic volume level
-    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-mic-volume.sh");
+    proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-mic-volume.sh");
     proc.waitForFinished();
 
    QString micvolume=proc.readAllStandardOutput();
    micvolume = micvolume.trimmed();
 
     //mic mute status
-    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-mic-mute.sh");
+    proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-mic-mute.sh");
     proc.waitForFinished();
 
    QString micmute=proc.readAllStandardOutput();
@@ -71,7 +71,7 @@ void MainWindow::check_status_MainWindow()
     }
 
     // brightness level
-    proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-brightness.sh");
+    proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-brightness.sh");
     proc.waitForFinished();
 
    QString bright=proc.readAllStandardOutput();
@@ -121,7 +121,7 @@ void MainWindow::check_status_MainWindow()
                 ui->toolButton_flashlight->setChecked(false);
 
             // nightmode status
-            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-nightmode.sh");
+            proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-nightmode.sh");
             proc.waitForFinished();
 
            QString night=proc.readAllStandardOutput();
@@ -134,7 +134,7 @@ void MainWindow::check_status_MainWindow()
 
             //rotation status
 
-            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-rotation.sh");
+            proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-rotation.sh");
             proc.waitForFinished();
 
            QString rot=proc.readAllStandardOutput();
@@ -158,7 +158,7 @@ void MainWindow::check_status_MainWindow()
                 ui->toolButton_rotateinvert->setChecked(false);
 
             // keyboard off status
-            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-keyboard.sh");
+            proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-keyboard.sh");
             proc.waitForFinished();
 
            QString keyboard=proc.readAllStandardOutput();
@@ -170,7 +170,7 @@ void MainWindow::check_status_MainWindow()
                 ui->toolButton_keyboardoff->setChecked(false);
 
             // touchpad off status
-            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-touchpad.sh");
+            proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-touchpad.sh");
             proc.waitForFinished();
 
            QString touchpad=proc.readAllStandardOutput();
@@ -182,7 +182,7 @@ void MainWindow::check_status_MainWindow()
                 ui->toolButton_touchpadoff->setChecked(false);
 
             // touchscreen off status
-            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-touchscreen.sh");
+            proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-touchscreen.sh");
             proc.waitForFinished();
 
            QString touchscreen=proc.readAllStandardOutput();
@@ -193,7 +193,7 @@ void MainWindow::check_status_MainWindow()
             else
                 ui->toolButton_touchscreenoff->setChecked(false);
             // camera off status
-            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-camera.sh");
+            proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-camera.sh");
             proc.waitForFinished();
 
            QString camera=proc.readAllStandardOutput();
@@ -204,7 +204,7 @@ void MainWindow::check_status_MainWindow()
             //else
                 //ui->toolButton_cameraoff->setChecked(false);
             // kbd-backlight status
-            proc.start("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/check-backlight.sh");
+            proc.start("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/check-backlight.sh");
             proc.waitForFinished();
 
            QString kbd=proc.readAllStandardOutput();
@@ -227,13 +227,13 @@ void MainWindow::on_toolButton_nightmode_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/nightmode-on.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/nightmode-on.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/nightmode-off.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/nightmode-off.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -245,13 +245,13 @@ void MainWindow::on_toolButton_performance_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/performance.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/performance.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/powersave.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/powersave.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -263,13 +263,13 @@ void MainWindow::on_toolButton_powersave_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/powersave.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/powersave.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/performance.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/performance.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -281,13 +281,13 @@ void MainWindow::on_toolButton_flashlight_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/flashlight-on.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/flashlight-on.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/flashlight-off.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/flashlight-off.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -300,13 +300,13 @@ void MainWindow::on_toolButton_cameraoff_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/camera-on.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/camera-on.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/camera-off.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/camera-off.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -318,13 +318,13 @@ void MainWindow::on_toolButton_touchpadoff_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchpad-off.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/touchpad-off.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchpad-on.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/touchpad-on.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -336,13 +336,13 @@ void MainWindow::on_toolButton_touchscreenoff_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchscreen-off.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/touchscreen-off.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/touchscreen-on.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/touchscreen-on.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -362,7 +362,7 @@ void MainWindow::on_toolbutton_dpms_clicked()
     if(msgBox.exec() == QMessageBox::Yes){
       // do something
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-off.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/dpms-off.sh");
                 proc.waitForFinished();
     }//else {
       // do something else
@@ -375,13 +375,13 @@ void MainWindow::on_toolButton_autorotate_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-on.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-on.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-off.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/autorotate-off.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -391,7 +391,7 @@ void MainWindow::on_toolButton_autorotate_clicked(bool checked)
 void MainWindow::on_toolButton_rotateleft_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-left.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-left.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -400,7 +400,7 @@ void MainWindow::on_toolButton_rotateleft_clicked()
 void MainWindow::on_toolButton_rotatenormal_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-normal.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-normal.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -409,7 +409,7 @@ void MainWindow::on_toolButton_rotatenormal_clicked()
 void MainWindow::on_toolButton_rotateright_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-right.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-right.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -418,7 +418,7 @@ void MainWindow::on_toolButton_rotateright_clicked()
 void MainWindow::on_toolButton_rotateinvert_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-invert.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/rotate-invert.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -429,13 +429,13 @@ void MainWindow::on_toolButton_keyboardoff_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/keyboard-off.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/keyboard-off.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/keyboard-on.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/keyboard-on.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -448,13 +448,13 @@ void MainWindow::on_toolButton_kbdbacklight_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/kbd-backlight-on.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/kbd-backlight-on.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/kbd-backlight-off.sh");
+                proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/kbd-backlight-off.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -472,13 +472,13 @@ void MainWindow::on_toolButton_audiomute_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/audiomute.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/audiomute.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/audiounmute.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/audiounmute.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -488,7 +488,7 @@ void MainWindow::on_toolButton_audiomute_clicked(bool checked)
 void MainWindow::on_pushButton_audiovolup_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/audiovolup.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/audiovolup.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -498,7 +498,7 @@ void MainWindow::on_pushButton_audiovolup_clicked()
 void MainWindow::on_pushButton_audiovoldown_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/audiovoldown.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/audiovoldown.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -509,13 +509,13 @@ void MainWindow::on_toolButton_brightness_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/brightfull.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/brightfull.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/brightdim.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/brightdim.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -525,7 +525,7 @@ void MainWindow::on_toolButton_brightness_clicked(bool checked)
 void MainWindow::on_pushButton_brightup_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/brightup.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/brightup.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -534,7 +534,7 @@ void MainWindow::on_pushButton_brightup_clicked()
 void MainWindow::on_pushButton_brightdown_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/brightdown.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/brightdown.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -545,13 +545,13 @@ void MainWindow::on_toolButton_micmute_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/micmute.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/micmute.sh");
                 proc.waitForFinished();
     }
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/micunmute.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/micunmute.sh");
                 proc.waitForFinished();
     }
     check_status_MainWindow();
@@ -561,7 +561,7 @@ void MainWindow::on_toolButton_micmute_clicked(bool checked)
 void MainWindow::on_pushButton_micvolup_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/micvolup.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/micvolup.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -570,7 +570,7 @@ void MainWindow::on_pushButton_micvolup_clicked()
 void MainWindow::on_pushButton_micvoldown_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/micvoldown.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/micvoldown.sh");
             proc.waitForFinished();
             check_status_MainWindow();
             check_status_MainWindow();
@@ -580,7 +580,7 @@ void MainWindow::on_pushButton_micvoldown_clicked()
 void MainWindow::on_toolButton_camera_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/camera.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/camera.sh");
             proc.waitForFinished();
 }
 
@@ -589,7 +589,7 @@ void MainWindow::on_toolButton_audiorecorder_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/audio-recorder.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/audio-recorder.sh");
                 proc.waitForFinished();
                 ui->audiorecorder->setText("Stop Recording");
                 ui->audiorecorder->setAlignment(Qt::AlignCenter);
@@ -597,7 +597,7 @@ void MainWindow::on_toolButton_audiorecorder_clicked(bool checked)
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/stop-recorder.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/stop-recorder.sh");
                 proc.waitForFinished();
                 ui->audiorecorder->setText("Audio Recorder");
                 ui->audiorecorder->setAlignment(Qt::AlignCenter);
@@ -607,7 +607,7 @@ void MainWindow::on_toolButton_audiorecorder_clicked(bool checked)
 void MainWindow::on_toolButton_screenshot_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/screenshot.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/screenshot.sh");
             proc.waitForFinished();
 }
 
@@ -616,7 +616,7 @@ void MainWindow::on_toolButton_screenrecorder_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/screen-recorder.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/screen-recorder.sh");
                 proc.waitForFinished();
                 ui->screenrecorder->setText("Stop Recording");
                 ui->screenrecorder->setAlignment(Qt::AlignCenter);
@@ -624,7 +624,7 @@ void MainWindow::on_toolButton_screenrecorder_clicked(bool checked)
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/stop-recorder.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/stop-recorder.sh");
                 proc.waitForFinished();
                 ui->screenrecorder->setText("Screen Recorder");
                 ui->screenrecorder->setAlignment(Qt::AlignCenter);
@@ -636,8 +636,8 @@ void MainWindow::on_toolButton_screencam_clicked(bool checked)
     if(checked) //on
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/screencam-recorder.sh");
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/toggle_always_above.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/screencam-recorder.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/toggle_always_above.sh");
                 proc.waitForFinished();
                 ui->screencam->setText("Stop Recording");
                 ui->screencam->setAlignment(Qt::AlignCenter);
@@ -645,7 +645,7 @@ void MainWindow::on_toolButton_screencam_clicked(bool checked)
     else //off
     {
         QProcess proc;
-                proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/stop-recorder.sh");
+                proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/stop-recorder.sh");
                 proc.waitForFinished();
                 ui->screencam->setText("Screencam Recorder");
                 ui->screencam->setAlignment(Qt::AlignCenter);
@@ -656,7 +656,7 @@ void MainWindow::on_toolButton_screencam_clicked(bool checked)
 void MainWindow::on_toolButton_lockscreen_clicked()
 {
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/lockscreen.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/lockscreen.sh");
             proc.waitForFinished();
 
 }
@@ -671,7 +671,7 @@ void MainWindow::on_toolButton_logout_clicked()
         msgBox.setDefaultButton(QMessageBox::No);
         if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/logout.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/logout.sh");
             proc.waitForFinished();
            }
 }
@@ -687,7 +687,7 @@ void MainWindow::on_toolButton_sleep_clicked()
     if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
     proc.waitForFinished();
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/suspend.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/suspend.sh");
             proc.waitForFinished();
     }
 }
@@ -702,7 +702,7 @@ void MainWindow::on_toolButton_poweroff_clicked()
         msgBox.setDefaultButton(QMessageBox::No);
         if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/poweroff.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/poweroff.sh");
             proc.waitForFinished();
         }
 }
@@ -717,7 +717,7 @@ void MainWindow::on_toolButton_reboot_clicked()
     msgBox.setDefaultButton(QMessageBox::No);
     if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/reboot.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/reboot.sh");
             proc.waitForFinished();
     }
 }
@@ -732,7 +732,7 @@ void MainWindow::on_toolButton_hibernate_clicked()
     msgBox.setDefaultButton(QMessageBox::No);
     if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/hibernate.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/hibernate.sh");
             proc.waitForFinished();
     }
 }
@@ -747,7 +747,7 @@ void MainWindow::on_toolButton_reboottouefi_clicked()
     msgBox.setDefaultButton(QMessageBox::No);
     if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/reboot-to-uefi.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/reboot-to-uefi.sh");
             proc.waitForFinished();
     }
 }
@@ -762,7 +762,7 @@ void MainWindow::on_toolButton_hybridsleep_clicked()
     msgBox.setDefaultButton(QMessageBox::No);
     if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/hybrid-sleep.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/hybrid-sleep.sh");
             proc.waitForFinished();
     }
 }
@@ -777,7 +777,7 @@ void MainWindow::on_toolButton_suspendthenhibernate_clicked()
     msgBox.setDefaultButton(QMessageBox::No);
     if(msgBox.exec() == QMessageBox::Yes){
     QProcess proc;
-            proc.startDetached("/bin/sh", QStringList()<< "/usr/share/qwikaccess/scripts/suspend-then-hibernate.sh");
+            proc.startDetached("/bin/bash", QStringList()<< "/usr/share/qwikaccess/scripts/suspend-then-hibernate.sh");
             proc.waitForFinished();
     }
 }
@@ -787,20 +787,20 @@ void MainWindow::on_toolButton_suspendthenhibernate_clicked()
 void MainWindow::on_pushButton_restartkeyboard_clicked()
 {
     QProcess proc;
-            proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-keyboard.sh");
+            proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/restart-keyboard.sh");
             proc.waitForFinished();
 }
 
 void MainWindow::on_pushButton_restarttouchpad_clicked()
 {
     QProcess proc;
-            proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-touchpad.sh");
+            proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/restart-touchpad.sh");
             proc.waitForFinished();
 }
 
 void MainWindow::on_pushButton_restartusb_clicked()
 {
     QProcess proc;
-            proc.start("pkexec", QStringList()<< "/bin/sh" << "/usr/share/qwikaccess/scripts/restart-usb.sh");
+            proc.start("pkexec", QStringList()<< "/bin/bash" << "/usr/share/qwikaccess/scripts/restart-usb.sh");
             proc.waitForFinished();
 }
